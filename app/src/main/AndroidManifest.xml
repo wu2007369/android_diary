@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wuzhiming.myapplication">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".customCamera.Main11Activity"></activity>
+        <activity android:name=".customCamera.CameraActivity"></activity>
+        <activity android:name=".customCamera.PhotoActivity"></activity>
+
+        <activity android:name=".MainActivity2" />
+        <activity
+            android:name=".coordinatorlayout.Main9Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".coordinatorlayout.Main6Activity"
+            android:theme="@style/noActionAndStausTransparent" />
+        <activity android:name=".coordinatorlayout.Main8Activity" />
+        <activity android:name=".Main7Activity" />
+        <activity
+            android:name=".Main5Activity"
+            android:theme="@style/dialogActivityTheme" />
+        <activity android:name=".Main4Activity" />
+        <activity android:name=".Main3Activity" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".TranslucentActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

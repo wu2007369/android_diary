@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main7Activity">
+
+        <ViewStub
+            android:id="@+id/viewstub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:inflatedId="@+id/iv_VsContent2"
+            android:layout="@layout/viewstub_color"
+            />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="casokpckoapskcopask"
+        android:textSize="20dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/iv_VsContent2"
+        />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="qiehuan"
+        android:textSize="20dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        />
+
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@id/btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_vs_showView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="显示ViewStub"/>
+            <Button
+                android:id="@+id/btn_vs_changeHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="更改ViewStub"/>
+            <Button
+                android:id="@+id/btn_vs_hideView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:text="隐藏ViewStub"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="正在加载。。。"/>
+
+        <!--ViewStub 展示或者隐藏内容-->
+        <ViewStub
+            android:id="@+id/viewstub_test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inflatedId="@+id/iv_VsContent"
+            android:layout="@layout/iv_vs_content"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

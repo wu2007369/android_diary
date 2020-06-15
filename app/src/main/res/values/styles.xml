@@ -1,0 +1,71 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="dialogActivityTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="windowNoTitle">true</item>
+        <!--是否浮现在activity之上，设置成true在部分机型上高度可能显示不全-->
+        <item name="android:windowIsFloating">false</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--设置动画-->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="noActionAndStausTransparent" parent="AppTheme.NoActionBar"
+
+        >
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+    </style>
+
+    <!--图片指示器标签控件-->
+    <declare-styleable name="ImageTabLayout">
+        <attr name="itl_text_color" format="color" />//文本默认颜色
+        <attr name="itl_text_color_selected" format="color" />//文本选中颜色
+        <attr name="itl_text_bold" format="boolean" />//文字是否加粗
+
+        <attr name="itl_text_background" format="reference" />//文本默认背景
+        <attr name="itl_text_background_selected" format="reference" />//文本选中背景
+        <attr name="itl_indicator" format="reference" />// 指示器图片（或颜色）资源
+
+        <attr name="itl_indicator_height" format="dimension" />//指示器高
+        <attr name="itl_indicator_width" format="dimension" />//指示器宽
+        <attr name="itl_view_height" format="dimension" />// item高度
+        <attr name="itl_view_width" format="dimension" />// item宽度
+        <attr name="itl_inner_margin_left" format="dimension" />// item距左
+        <attr name="itl_inner_margin_right" format="dimension" />// item距右
+        <attr name="itl_tab_padding_top" format="dimension" />//Tab上边内边距
+        <attr name="itl_tab_padding_bottom" format="dimension" />//Tab下边内边距
+        <attr name="itl_tab_padding_left" format="dimension" />//Tab左边内边距
+        <attr name="itl_tab_padding_right" format="dimension" />//Tab右边内边距
+        <attr name="itl_tab_indicator_padding" format="dimension" />//Tab和指示器之间距离
+        <attr name="itl_text_size" format="dimension" />// 默认字体大小
+        <attr name="itl_text_size_selected" format="dimension" />// 选中后字体大小
+        <attr name="itl_smooth_scroll" format="boolean" />//是否平滑滚动
+    </declare-styleable>
+</resources>
