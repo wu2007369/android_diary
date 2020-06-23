@@ -4,9 +4,10 @@
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
     <application
@@ -16,10 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".customCamera.Main11Activity"></activity>
-        <activity android:name=".customCamera.CameraActivity"></activity>
-        <activity android:name=".customCamera.PhotoActivity"></activity>
 
+        <activity android:name=".diff.DiffActivity"></activity>
+        <activity android:name=".recyexpansion.Main13Activity"></activity>
+        <activity android:name=".customCamera.Main11Activity" />
+        <activity android:name=".customCamera.CameraActivity" />
+        <activity android:name=".customCamera.PhotoActivity" />
         <activity android:name=".MainActivity2" />
         <activity
             android:name=".coordinatorlayout.Main9Activity"

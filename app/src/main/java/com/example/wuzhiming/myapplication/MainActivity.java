@@ -10,6 +10,7 @@ import com.example.wuzhiming.myapplication.coordinatorlayout.Main6Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main8Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main9Activity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
+import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -48,6 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn10).setOnClickListener(this);
         findViewById(R.id.btn11).setOnClickListener(this);
         findViewById(R.id.btn12).setOnClickListener(this);
+        findViewById(R.id.btn13).setOnClickListener(this);
     }
 
     @Override
@@ -97,6 +99,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn12:
                 startActivity(new Intent(this, Main11Activity.class));
+                break;
+            case R.id.btn13:
+                startActivity(new Intent(this, Main13Activity.class));
                 break;
             default:
                 break;
