@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.wuzhiming.myapplication.coordinatorlayout.HeaderAnimatorActivity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main6Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main8Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main9Activity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
+import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -22,14 +24,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Button btn1 = findViewById(R.id.btn);
         btn1.setOnClickListener(this);
 
-        Button btn2 = findViewById(R.id.btn2);
-        btn2.setOnClickListener(this);
-
-        Button btn3 = findViewById(R.id.btn3);
-        btn3.setOnClickListener(this);
-
-        Button btn4 = findViewById(R.id.btn4);
-        btn4.setOnClickListener(this);
 
         Button btn5 = findViewById(R.id.btn5);
         btn5.setOnClickListener(this);
@@ -43,10 +37,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Button btn8 = findViewById(R.id.btn8);
         btn8.setOnClickListener(this);
 
-        Button btn9 = findViewById(R.id.btn9);
-        btn9.setOnClickListener(this);
-
-        findViewById(R.id.btn10).setOnClickListener(this);
         findViewById(R.id.btn11).setOnClickListener(this);
         findViewById(R.id.btn12).setOnClickListener(this);
         findViewById(R.id.btn13).setOnClickListener(this);
@@ -56,22 +46,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn:
-                Intent intent = new Intent(this, TranslucentActivity.class);
+                Intent intent = new Intent(this, PeriodActivity.class);
                 startActivity(intent);
-                break;
-            case R.id.btn2:
-                Intent intent2 = new Intent(this, Main2Activity.class);
-                startActivity(intent2);
-                break;
-
-            case R.id.btn3:
-                AlertDialog.Builder builder=new AlertDialog.Builder(this);
-                builder.setMessage("csdcdscs");
-                builder.show();
-                break;
-
-            case R.id.btn4:
-                startActivity(new Intent(this,Main3Activity.class));
                 break;
             case R.id.btn5:
                 startActivity(new Intent(this,Main4Activity.class));
@@ -86,13 +62,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(new Intent(this,Main7Activity.class));
                 break;
             case R.id.btn8:
-                startActivity(new Intent(this, Main8Activity.class));
-                break;
-            case R.id.btn9:
-                startActivity(new Intent(this, Main6Activity.class));
-                break;
-            case R.id.btn10:
-                startActivity(new Intent(this, Main9Activity.class));
+                startActivity(new Intent(this, HeaderAnimatorActivity.class));
                 break;
             case R.id.btn11:
                 startActivity(new Intent(this, MainActivity2.class));

@@ -17,9 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".diff.DiffActivity"></activity>
-        <activity android:name=".recyexpansion.Main13Activity"></activity>
+        <activity android:name=".coordinatorlayout.HeaderAnimatorActivity"></activity>
+        <activity android:name=".period.PeriodActivity" />
+        <activity android:name=".diff.DiffActivity" />
+        <activity android:name=".recyexpansion.Main13Activity" />
         <activity android:name=".customCamera.Main11Activity" />
         <activity android:name=".customCamera.CameraActivity" />
         <activity android:name=".customCamera.PhotoActivity" />
@@ -40,7 +41,7 @@
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TranslucentActivity"
             android:theme="@android:style/Theme.Translucent" />

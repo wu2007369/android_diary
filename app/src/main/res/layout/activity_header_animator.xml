@@ -4,25 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recyexpansion.Main13Activity">
+    tools:context=".coordinatorlayout.HeaderAnimatorActivity">
     <Button
-        android:id="@+id/btn4"
+        android:id="@+id/btn8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="recyclerview基本"
+        android:text="coordinaterLayout的使用"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <Button
-        android:id="@+id/btn_diff"
+        android:id="@+id/btn9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="折叠式布局的使用2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn4"
-        android:gravity="center"
-        android:text="diff功能"
-        />
+        app:layout_constraintTop_toBottomOf="@id/btn8"/>
+
+    <Button
+        android:id="@+id/btn10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="折叠式布局的使用3(沉浸式状态栏)"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn9"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

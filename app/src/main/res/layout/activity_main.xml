@@ -16,37 +16,11 @@
             android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="查看覆盖透明主题activity的生命周期"
+            android:text="查看各场景activity的生命周期"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="查看覆盖普通主题activity的生命周期"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn"/>
-
-        <Button
-            android:id="@+id/btn3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="查看覆盖dialog时的生命周期"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn2"/>
-
-        <Button
-            android:id="@+id/btn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="recyclerview"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn6"/>
 
         <Button
             android:id="@+id/btn5"
@@ -55,7 +29,7 @@
             android:text="沉浸式状态栏+颜色调整"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn4"/>
+            app:layout_constraintTop_toBottomOf="@id/btn6"/>
 
         <Button
             android:id="@+id/btn6"
@@ -64,7 +38,7 @@
             android:text="跳转到dialog主题的Acitvty"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn3"/>
+            app:layout_constraintTop_toBottomOf="@id/btn"/>
 
         <Button
             android:id="@+id/btn7"
@@ -79,28 +53,11 @@
             android:id="@+id/btn8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="coordinaterLayout的使用"
+            android:text="头部动画特效"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn7"/>
 
-        <Button
-            android:id="@+id/btn9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="折叠式布局的使用2"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn8"/>
-
-        <Button
-            android:id="@+id/btn10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="折叠式布局的使用3(沉浸式状态栏)"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn9"/>
 
         <Button
             android:id="@+id/btn11"
@@ -109,7 +66,7 @@
             android:text="画虚线"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn10"/>
+            app:layout_constraintTop_toBottomOf="@id/btn8"/>
 
         <Button
             android:id="@+id/btn12"
