@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".coordinatorlayout.HeaderAnimatorActivity"></activity>
+        <activity android:name=".shape.BottomLineActivity"></activity>
+        <activity android:name=".shape.ShapeActivity" />
+        <activity android:name=".coordinatorlayout.HeaderAnimatorActivity" />
         <activity android:name=".period.PeriodActivity" />
         <activity android:name=".diff.DiffActivity" />
         <activity android:name=".recyexpansion.Main13Activity" />
@@ -39,7 +41,7 @@
         <activity android:name=".Main4Activity" />
         <activity android:name=".Main3Activity" />
         <activity
-            android:name=".Main2Activity"
+            android:name=".shape.Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

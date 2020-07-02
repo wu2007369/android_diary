@@ -1,6 +1,8 @@
-package com.example.wuzhiming.myapplication;
+package com.example.wuzhiming.myapplication.shape;
 
 import android.os.Bundle;
+
+import com.example.wuzhiming.myapplication.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

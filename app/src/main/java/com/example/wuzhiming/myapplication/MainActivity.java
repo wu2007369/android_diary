@@ -13,6 +13,7 @@ import com.example.wuzhiming.myapplication.coordinatorlayout.Main9Activity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
 import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
+import com.example.wuzhiming.myapplication.shape.ShapeActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -65,7 +66,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(new Intent(this, HeaderAnimatorActivity.class));
                 break;
             case R.id.btn11:
-                startActivity(new Intent(this, MainActivity2.class));
+                startActivity(new Intent(this, ShapeActivity.class));
                 break;
             case R.id.btn12:
                 startActivity(new Intent(this, Main11Activity.class));
