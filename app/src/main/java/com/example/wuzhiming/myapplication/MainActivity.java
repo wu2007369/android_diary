@@ -1,6 +1,7 @@
 package com.example.wuzhiming.myapplication;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.example.wuzhiming.myapplication.coordinatorlayout.Main6Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main8Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main9Activity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
+import com.example.wuzhiming.myapplication.intent.IntentActivity;
 import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
 import com.example.wuzhiming.myapplication.shape.ShapeActivity;
@@ -41,6 +43,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn11).setOnClickListener(this);
         findViewById(R.id.btn12).setOnClickListener(this);
         findViewById(R.id.btn13).setOnClickListener(this);
+        findViewById(R.id.btn14).setOnClickListener(this);
     }
 
     @Override
@@ -73,6 +76,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn13:
                 startActivity(new Intent(this, Main13Activity.class));
+                break;
+            case R.id.btn14:
+                startActivity(new Intent(this, IntentActivity.class));
                 break;
             default:
                 break;

@@ -17,7 +17,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".shape.BottomLineActivity"></activity>
+
+        <activity android:name=".intent.JumpActivity" />
+        <activity android:name=".intent.AliasActivity"></activity>
+        <activity-alias
+            android:name=".intent.JumpActivity"
+            android:targetActivity=".intent.AliasActivity"/>
+
+        <activity android:name=".intent.IntentActivity" />
+        <activity android:name=".shape.BottomLineActivity" />
         <activity android:name=".shape.ShapeActivity" />
         <activity android:name=".coordinatorlayout.HeaderAnimatorActivity" />
         <activity android:name=".period.PeriodActivity" />
