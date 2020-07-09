@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication;
+package com.example.wuzhiming.myapplication.immerse;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.wuzhiming.myapplication.R;
 
 public class Main4Activity extends AppCompatActivity {
 

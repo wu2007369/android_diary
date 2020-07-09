@@ -12,6 +12,7 @@ import com.example.wuzhiming.myapplication.coordinatorlayout.Main6Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main8Activity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.Main9Activity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
+import com.example.wuzhiming.myapplication.immerse.ImmerseActivity;
 import com.example.wuzhiming.myapplication.intent.IntentActivity;
 import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
@@ -54,7 +55,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.btn5:
-                startActivity(new Intent(this,Main4Activity.class));
+                startActivity(new Intent(this, ImmerseActivity.class));
                 break;
 
             case R.id.btn6:

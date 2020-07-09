@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".immerse.Main4Activity"
-    android:background="@drawable/bg">
+    tools:context=".immerse.ImmerseWebviewActivity">
+    <WebView
+        android:id="@+id/webview"
+        android:paddingTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
