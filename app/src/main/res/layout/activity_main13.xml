@@ -25,4 +25,15 @@
         android:text="diff功能"
         />
 
+    <Button
+        android:id="@+id/btn_wxread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_diff"
+        android:gravity="center"
+        android:text="微信读书demo实现 悬浮吸顶（recy+decoration）"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
-package com.example.wuzhiming.myapplication.diff;
+package com.example.wuzhiming.myapplication.recyexpansion.diff;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -66,15 +65,13 @@ public class DiffActivity extends AppCompatActivity {
 
     private void doReturn() {
         diffResult = DiffUtil.calculateDiff(new ManDifCallback(mDifAdapter.getDataList(), mManCloneList), true);
-        mDifAdapter.setDataList(mManCloneList);
+//        mDifAdapter.setDataList(mManCloneList);
         diffResult.dispatchUpdatesTo(mDifAdapter);
+        mDifAdapter.setDataList(mManCloneList);//与顺序无关，但数据源一定要重新设置到adapter
 
     }
 
     /**
-     * 也就是不能对原来的那个数据再进行修改了的
-     *
-     * 好吧,那说明我不能对原数据源进行修改了哦;只能克隆咯
      */
     private void doChanged() {
         // 进行修改
@@ -85,8 +82,9 @@ public class DiffActivity extends AppCompatActivity {
         mManListOrigin.remove(5);
         // 调用DiffUtils帮助工具
         diffResult = DiffUtil.calculateDiff(new ManDifCallback(mDifAdapter.getDataList(), mManListOrigin), true);
-        mDifAdapter.setDataList(mManListOrigin);
+//        mDifAdapter.setDataList(mManListOrigin);
         diffResult.dispatchUpdatesTo(mDifAdapter);
+        mDifAdapter.setDataList(mManListOrigin);//与顺序无关，但数据源一定要重新设置到adapter
 
     }
 

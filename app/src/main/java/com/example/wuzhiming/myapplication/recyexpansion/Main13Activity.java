@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.example.wuzhiming.myapplication.Main3Activity;
 import com.example.wuzhiming.myapplication.R;
-import com.example.wuzhiming.myapplication.diff.DiffActivity;
+import com.example.wuzhiming.myapplication.recyexpansion.diff.DiffActivity;
+import com.example.wuzhiming.myapplication.recyexpansion.suspension.WXReadDemoActivity;
 
 public class Main13Activity extends AppCompatActivity {
 
@@ -25,6 +25,10 @@ public class Main13Activity extends AppCompatActivity {
         findViewById(R.id.btn_diff).setOnClickListener(v->{
 
             startActivity(new Intent(this, DiffActivity.class));
+        });
+
+        findViewById(R.id.btn_wxread).setOnClickListener(v->{
+            startActivity(new Intent(this, WXReadDemoActivity.class));
         });
 
     }
