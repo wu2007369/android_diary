@@ -1,10 +1,12 @@
-package com.example.wuzhiming.myapplication;
+package com.example.wuzhiming.myapplication.shape;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity2 extends AppCompatActivity {
+import com.example.wuzhiming.myapplication.R;
+
+public class DottedLineActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

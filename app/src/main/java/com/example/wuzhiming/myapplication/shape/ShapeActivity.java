@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.wuzhiming.myapplication.MainActivity2;
 import com.example.wuzhiming.myapplication.R;
 
 public class ShapeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,7 +24,7 @@ public class ShapeActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn11:
-                startActivity(new Intent(this, MainActivity2.class));
+                startActivity(new Intent(this, DottedLineActivity.class));
                 break;
             case R.id.btn2:
                 startActivity(new Intent(this, BottomLineActivity.class));

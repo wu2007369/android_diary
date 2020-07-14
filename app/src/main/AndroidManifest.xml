@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".recyexpansion.suspension.WXReadDemoActivity"></activity>
+        <activity android:name=".textexpansion.TextActivity"></activity>
+        <activity android:name=".recyexpansion.suspension.WXReadDemoActivity" />
         <activity
             android:name=".immerse.ImmerseWebviewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -42,7 +43,7 @@
         <activity android:name=".customCamera.Main11Activity" />
         <activity android:name=".customCamera.CameraActivity" />
         <activity android:name=".customCamera.PhotoActivity" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".shape.DottedLineActivity" />
         <activity
             android:name=".coordinatorlayout.Main9Activity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -57,7 +58,7 @@
         <activity android:name=".immerse.Main4Activity" />
         <activity android:name=".Main3Activity" />
         <activity
-            android:name=".shape.Main2Activity"
+            android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

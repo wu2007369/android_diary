@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication.shape;
+package com.example.wuzhiming.myapplication;
 
 import android.os.Bundle;
 
