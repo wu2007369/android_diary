@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".coordinatorlayout.TitleGradientAnimateActivity">
+
+    <com.example.wuzhiming.myapplication.coordinatorlayout.MyScrollView
+        android:id="@+id/myscroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/get_height_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#FF4081"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1200dp"
+                android:background="@color/checked"
+                />
+
+        </LinearLayout>
+    </com.example.wuzhiming.myapplication.coordinatorlayout.MyScrollView>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="看看这个颜色"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        />
+</RelativeLayout>

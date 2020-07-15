@@ -2,6 +2,7 @@ package com.example.wuzhiming.myapplication.coordinatorlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ArgbEvaluator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,8 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
         btn9.setOnClickListener(this);
 
         findViewById(R.id.btn10).setOnClickListener(this);
+        findViewById(R.id.btn1).setOnClickListener(this);
+
     }
 
     @Override
@@ -36,6 +39,9 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.btn10:
                 startActivity(new Intent(this, Main9Activity.class));
+                break;
+            case R.id.btn1:
+                startActivity(new Intent(this, TitleGradientAnimateActivity.class));
         }
     }
 }

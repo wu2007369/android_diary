@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".textexpansion.TextActivity"></activity>
+        <activity android:name=".coordinatorlayout.TitleGradientAnimateActivity"></activity>
+        <activity android:name=".textexpansion.TextActivity" />
         <activity android:name=".recyexpansion.suspension.WXReadDemoActivity" />
         <activity
             android:name=".immerse.ImmerseWebviewActivity"
