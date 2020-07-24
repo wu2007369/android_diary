@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentName;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,6 +19,8 @@ public class IntentActivity extends AppCompatActivity implements View.OnClickLis
 
         findViewById(R.id.btn14).setOnClickListener(this);
         findViewById(R.id.btn1).setOnClickListener(this);
+        findViewById(R.id.btn2).setOnClickListener(this);
+        findViewById(R.id.btn3).setOnClickListener(this);
 
     }
 
@@ -35,6 +38,24 @@ public class IntentActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn1:
 //                startActivity(new Intent(this,AliasActivity.class));
                 startActivity(new Intent(this,JumpActivity.class));
+                break;
+
+            case R.id.btn2:
+//                startActivity(new Intent(this,AliasActivity.class));
+                Intent intent=new Intent();
+                ComponentName cn2 = new ComponentName("com.jinying_oa",  "com.jinying_oa.activity.GuideActivity");
+                intent.setComponent(cn2);
+                startActivity(intent);
+                break;
+
+            case R.id.btn3:
+//                startActivity(new Intent(this,AliasActivity.class));
+                Intent intent3=new Intent();
+                intent3.setAction("android.intent.action.VIEW");
+                intent3.addCategory("android.intent.category.BROWSABLE");
+                intent3.setData(Uri.parse("geoaapp://"));
+//                intent3.setPackage("com.jinying_oa");
+                startActivity(intent3);
                 break;
             default:
                 break;

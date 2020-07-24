@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -36,10 +37,14 @@ public class TextActivity extends AppCompatActivity {
         SpannableStringBuilder spannableBuilder = new SpannableStringBuilder(a);
         // 单独设置字体颜色
         ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#3072F6"));
-        spannableBuilder.setSpan(colorSpan, 14, a.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        // 不设置点击不生效
+
+/*        spannableBuilder.setSpan(colorSpan, 14, a.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableBuilder.setSpan(colorSpan, 1, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);*/
+        spannableBuilder.setSpan(CharacterStyle.wrap(colorSpan), 14, a.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableBuilder.setSpan(CharacterStyle.wrap(colorSpan), 1, 2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         text3=findViewById(R.id.html_text4);
-        text3.setMovementMethod(LinkMovementMethod.getInstance());
+        // 不设置点击不生效
+//        text3.setMovementMethod(LinkMovementMethod.getInstance());
         text3.setText(spannableBuilder);
     }
 }

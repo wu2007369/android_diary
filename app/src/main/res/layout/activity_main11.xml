@@ -31,5 +31,15 @@
         android:id="@+id/iv_photo_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/open_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开闪光灯" />
 
+    <Button
+        android:id="@+id/off_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭闪光灯" />
 </LinearLayout>

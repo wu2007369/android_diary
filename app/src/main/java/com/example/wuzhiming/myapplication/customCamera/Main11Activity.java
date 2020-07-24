@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -42,6 +43,9 @@ public class Main11Activity extends AppCompatActivity {
     // 记录文件保存位置
     private String mFilePath;
     private FileInputStream is = null;
+
+
+    private Camera m_Camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +109,26 @@ public class Main11Activity extends AppCompatActivity {
                 }
                 startActivity(new Intent(Main11Activity.this,CameraActivity.class));
             }
+        });
+
+        findViewById(R.id.open_light).setOnClickListener(v->{
+            try{
+                m_Camera = Camera.open();
+                Camera.Parameters mParameters;
+                mParameters = m_Camera.getParameters();
+                mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                m_Camera.setParameters(mParameters);
+            } catch(Exception ex){}
+        });
+
+        findViewById(R.id.off_light).setOnClickListener(v->{
+            try{
+                Camera.Parameters mParameters;
+                mParameters = m_Camera.getParameters();
+                mParameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                m_Camera.setParameters(mParameters);
+                m_Camera.release();
+            } catch(Exception ex){}
         });
     }
 
