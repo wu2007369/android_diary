@@ -18,6 +18,7 @@ import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
 import com.example.wuzhiming.myapplication.shape.ShapeActivity;
 import com.example.wuzhiming.myapplication.textexpansion.TextActivity;
+import com.example.wuzhiming.myapplication.uieffect.UiEffectActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -47,6 +48,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn13).setOnClickListener(this);
         findViewById(R.id.btn14).setOnClickListener(this);
         findViewById(R.id.btn15).setOnClickListener(this);
+        findViewById(R.id.btn16).setOnClickListener(this);
     }
 
     @Override
@@ -85,6 +87,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn15:
                 startActivity(new Intent(this, TextActivity.class));
+                break;
+            case R.id.btn16:
+                startActivity(new Intent(this, UiEffectActivity.class));
                 break;
             default:
                 break;

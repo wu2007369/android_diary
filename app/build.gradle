@@ -33,6 +33,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation group: 'com.github.bumptech.glide', name: 'glide', version: '4.8.0'
-
+    implementation 'com.github.Liberuman:ShadowDrawable:0.1'
     compile group: 'androidx.viewpager2', name: 'viewpager2', version: '1.0.0'
 }
