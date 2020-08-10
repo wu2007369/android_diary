@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn14).setOnClickListener(this);
         findViewById(R.id.btn15).setOnClickListener(this);
         findViewById(R.id.btn16).setOnClickListener(this);
+        findViewById(R.id.btn17).setOnClickListener(this);
     }
 
     @Override
@@ -90,6 +91,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn16:
                 startActivity(new Intent(this, UiEffectActivity.class));
+                break;
+            case R.id.btn17:
+                startActivity(new Intent(this, DialogTestActivity.class));
                 break;
             default:
                 break;
