@@ -3,17 +3,28 @@ package com.example.wuzhiming.myapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class DialogTestActivity extends AppCompatActivity {
 
     private String TAG="DialogTestActivity";
+
+    DateFormat format= DateFormat.getDateTimeInstance();
+    Calendar calendar= Calendar.getInstance(Locale.CHINA);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +32,52 @@ public class DialogTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dialog_test2);
 
         findViewById(R.id.btn1).setOnClickListener(v->tipDialog());
+        findViewById(R.id.btn7).setOnClickListener(v->tipDialog2());
         findViewById(R.id.btn2).setOnClickListener(v->itemListDialog());
         findViewById(R.id.btn3).setOnClickListener(v->singleChoiceDialog());
         findViewById(R.id.btn4).setOnClickListener(v->multiChoiceDialog());
-        findViewById(R.id.btn5).setOnClickListener(v->tipDialog());
+        findViewById(R.id.btn5).setOnClickListener(v->showDateDialog());
+        findViewById(R.id.btn6).setOnClickListener(v->showTimeDialog());
+
+    }
+
+    private void showTimeDialog() {
+        // Calendar c = Calendar.getInstance();
+        // 创建一个TimePickerDialog实例，并把它显示出来
+        // 解释一哈，Activity是context的子类
+        new TimePickerDialog( this,0,
+                // 绑定监听器
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        Log.i(TAG,"hourOfDay：" + hourOfDay + "; minute:" + minute);
+                        Log.i(TAG,"您选择了：" + hourOfDay + "时" + minute  + "分");
+                    }
+                }
+                // 设置初始时间
+                , calendar.get(Calendar.HOUR_OF_DAY)
+                , calendar.get(Calendar.MINUTE)
+                // true表示采用24小时制
+                ,true).show();
+
+    }
+
+    private void showDateDialog() {
+// 直接创建一个DatePickerDialog对话框实例，并将它显示出来
+        DatePickerDialog.OnDateSetListener listener=new DatePickerDialog.OnDateSetListener() {
+            // 绑定监听器(How the parent is notified that the date is set.)
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                // 此处得到选择的时间，可以进行你想要的操作
+                Log.i(TAG,"year：" + year + "; monthOfYear" + monthOfYear + "; dayOfMonth" + dayOfMonth);
+                Log.i(TAG,"您选择了：" + year + "年" + (monthOfYear + 1) + "月" + dayOfMonth + "日");
+            }
+        };
+        new DatePickerDialog(this, 0, listener
+                // 设置初始日期
+                , calendar.get(Calendar.YEAR)
+                , calendar.get(Calendar.MONTH)
+                , calendar.get(Calendar.DAY_OF_MONTH)).show();
 
     }
 
@@ -79,6 +132,25 @@ public class DialogTestActivity extends AppCompatActivity {
                 Log.e(TAG, "对话框消失了");
             }
         });
+        dialog.show();                              //显示对话框
+    }
+
+    public void tipDialog2() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示：");
+        builder.setMessage("这是一个普通对话框，");
+        builder.setCancelable(false);            //点击对话框以外的区域是否让对话框消失
+
+        //设置正面按钮
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(DialogTestActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();      //创建AlertDialog对象
         dialog.show();                              //显示对话框
     }
 
