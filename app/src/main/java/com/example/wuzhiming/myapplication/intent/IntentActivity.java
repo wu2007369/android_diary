@@ -54,7 +54,6 @@ public class IntentActivity extends AppCompatActivity implements View.OnClickLis
                 intent3.setAction("android.intent.action.VIEW");
                 intent3.addCategory("android.intent.category.BROWSABLE");
                 intent3.setData(Uri.parse("geoaapp://"));
-//                intent3.setPackage("com.jinying_oa");
                 startActivity(intent3);
                 break;
             default:

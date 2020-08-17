@@ -20,10 +20,13 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.wuzhiming.myapplication.R;
 
 public class CameraActivity extends Activity implements SurfaceHolder.Callback {
+
+	private ImageView img_result;
 
 	private Button btn_camera;
 	private Camera mCamera;
@@ -35,7 +38,9 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// data为二进制完整数据
 			Bitmap bitmap=BitmapFactory.decodeByteArray(data,0,data.length);
-//			华为 oppo等机型，拍过一次之后camera就会自动停止没需要手动再开启一次
+
+			img_result.setImageBitmap(bitmap);
+			//			华为 oppo等机型，拍过一次之后camera就会自动停止没需要手动再开启一次
 			camera.startPreview();
 
 			/*
@@ -75,6 +80,8 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 		// 初始化SurfaceHolder
 		sh = sv.getHolder();
 		sh.addCallback(this);
+
+		img_result=(ImageView) findViewById(R.id.img_result);
 
 		btn_camera = (Button) findViewById(R.id.btn_camera);
 		btn_camera.setOnClickListener(new OnClickListener() {
