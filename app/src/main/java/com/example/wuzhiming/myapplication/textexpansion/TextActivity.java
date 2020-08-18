@@ -10,7 +10,10 @@ import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.CharacterStyle;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.wuzhiming.myapplication.R;
@@ -20,6 +23,7 @@ public class TextActivity extends AppCompatActivity {
     private TextView text;
     private TextView text2;
     private TextView text3;
+    private String TAG="TextActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,5 +50,14 @@ public class TextActivity extends AppCompatActivity {
         // 不设置点击不生效
 //        text3.setMovementMethod(LinkMovementMethod.getInstance());
         text3.setText(spannableBuilder);
+
+
+        Switch switchBtn = (Switch) findViewById(R.id.switch1);
+        switchBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.i(TAG,"isChecked="+isChecked);
+            }
+        });
     }
 }

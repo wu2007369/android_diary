@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--可推动嵌套滚动控件-->
+    <declare-styleable name="PushNestedScrollView">
+        <attr name="pnsv_open_pull_effect" format="boolean" />
+    </declare-styleable>
+</resources>

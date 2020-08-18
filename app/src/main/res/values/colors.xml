@@ -6,5 +6,6 @@
     <color name="checked">#3795ff</color>
     <color name="unchecked">#ebf4ff</color>
     <color name="white">#ffffff</color>
+    <color name="white_transparent">#00ffffff</color>
     <color name="black">#000000</color>
 </resources>

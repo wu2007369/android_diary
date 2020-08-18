@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication.coordinatorlayout;
+package com.example.wuzhiming.myapplication.wideget;
 
 import android.content.Context;
 import android.os.Build;

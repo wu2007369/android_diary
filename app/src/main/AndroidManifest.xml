@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DialogTestActivity"></activity>
+        <activity android:name=".coordinatorlayout.PushNestedScrollUseActivity"></activity>
+        <activity android:name=".DialogTestActivity" />
         <activity android:name=".uieffect.ShadowActivity" />
         <activity android:name=".uieffect.UiEffectActivity" />
         <activity android:name=".coordinatorlayout.TitleGradientAnimateActivity" />

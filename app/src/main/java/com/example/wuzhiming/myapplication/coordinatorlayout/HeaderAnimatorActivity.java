@@ -25,6 +25,7 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
 
         findViewById(R.id.btn10).setOnClickListener(this);
         findViewById(R.id.btn1).setOnClickListener(this);
+        findViewById(R.id.btn2).setOnClickListener(this);
 
     }
 
@@ -42,6 +43,10 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.btn1:
                 startActivity(new Intent(this, TitleGradientAnimateActivity.class));
+                break;
+            case R.id.btn2:
+                startActivity(new Intent(this, PushNestedScrollUseActivity.class));
+                break;
         }
     }
 }

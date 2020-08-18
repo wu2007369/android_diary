@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.wuzhiming.myapplication.R;
+import com.example.wuzhiming.myapplication.wideget.MyScrollView;
 
 public class TitleGradientAnimateActivity extends AppCompatActivity {
     private static final String TAG="TitleGradient";
