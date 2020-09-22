@@ -8,9 +8,12 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.example.wuzhiming.myapplication.dialog.VerificationScanCodeOrderDialog;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class DialogTestActivity extends AppCompatActivity {
 
     DateFormat format= DateFormat.getDateTimeInstance();
     Calendar calendar= Calendar.getInstance(Locale.CHINA);
+    private VerificationScanCodeOrderDialog mDialog;
 
 
     @Override
@@ -38,7 +42,29 @@ public class DialogTestActivity extends AppCompatActivity {
         findViewById(R.id.btn4).setOnClickListener(v->multiChoiceDialog());
         findViewById(R.id.btn5).setOnClickListener(v->showDateDialog());
         findViewById(R.id.btn6).setOnClickListener(v->showTimeDialog());
+        findViewById(R.id.btn8).setOnClickListener(v->showCustomeDialog());
+        findViewById(R.id.btn9).setOnClickListener(v->showWindowParamsDialog());
 
+    }
+
+    private void showWindowParamsDialog() {
+        AlertDialog mWindowDialog = tipDialog();
+        //调整明暗度的代码一定要在show()之后执行
+        WindowManager.LayoutParams lp = mWindowDialog.getWindow().getAttributes();
+        //调整明暗度，float值，完全透明不变暗是0.0f，完全变暗不透明是1.0f
+        lp.dimAmount=0.65f;
+        //必须要设置回去
+        mWindowDialog.getWindow().setAttributes(lp);
+        //根据谷歌文档，给对应的Window添加FLAG_DIM_BEHIND标志位，dimAmount值才有效。
+        mWindowDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+    }
+
+    private void showCustomeDialog() {
+        if (null == mDialog) {
+            mDialog = new VerificationScanCodeOrderDialog(
+                    this, VerificationScanCodeOrderDialog.DialogType.MARKET, "content");
+        }
+        mDialog.show();
     }
 
     private void showTimeDialog() {
@@ -84,7 +110,7 @@ public class DialogTestActivity extends AppCompatActivity {
     /**
      * 提示对话框
      */
-    public void tipDialog() {
+    public AlertDialog  tipDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("提示：");
         builder.setMessage("这是一个普通对话框，");
@@ -133,6 +159,8 @@ public class DialogTestActivity extends AppCompatActivity {
             }
         });
         dialog.show();                              //显示对话框
+
+        return dialog;
     }
 
     public void tipDialog2() {

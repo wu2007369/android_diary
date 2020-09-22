@@ -71,5 +71,23 @@
         app:layout_constraintTop_toBottomOf="@id/btn6"
         />
 
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="自定义dialog（手动填充全屏）"
+        app:layout_constraintTop_toBottomOf="@id/btn7"
+        />
 
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="自定义dialog（window属性调整明暗）"
+        app:layout_constraintTop_toBottomOf="@id/btn8"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
