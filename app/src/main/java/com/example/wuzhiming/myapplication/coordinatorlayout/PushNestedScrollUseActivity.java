@@ -69,9 +69,9 @@ public class PushNestedScrollUseActivity extends AppCompatActivity {
 
             @Override
             public boolean canPushDown() {
-/*                LinearLayoutManager layoutManager = (LinearLayoutManager) recy.getLayoutManager();
-                return layoutManager.findFirstCompletelyVisibleItemPosition() == 0;*/
-                return true;
+                LinearLayoutManager layoutManager = (LinearLayoutManager) recy.getLayoutManager();
+                return layoutManager.findFirstCompletelyVisibleItemPosition() == 0;
+//                return true;
             }
 
             @Override

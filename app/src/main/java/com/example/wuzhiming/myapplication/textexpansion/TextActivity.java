@@ -112,6 +112,12 @@ public class TextActivity extends AppCompatActivity {
         imageText1.setText(SpanStr);
     }
 
+    /**
+     * 完成view的绘制自身
+     * @param view
+     * @param width
+     * @param height
+     */
     private void layoutView(View view, int width, int height) {
         int measuredWidth = View.MeasureSpec.makeMeasureSpec(DpPxExchange.Dp2Px(this, width), View.MeasureSpec.EXACTLY);
         int measuredHeight = View.MeasureSpec.makeMeasureSpec(DpPxExchange.Dp2Px(this, height), View.MeasureSpec.EXACTLY);
