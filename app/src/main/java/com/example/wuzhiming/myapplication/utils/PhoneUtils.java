@@ -13,6 +13,9 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -335,6 +338,36 @@ public class PhoneUtils {
             localIntent.putExtra("com.android.settings.ApplicationPkgName", context.getPackageName());
         }
         context.startActivity(localIntent);
+    }
+
+
+    /**
+     * 设置状态栏为轻色调，（黑字）
+     */
+    protected void setLightStatusBar(Fragment fragment) {
+        FragmentActivity activity = fragment.getActivity();
+        if (activity == null) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            //View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN必须加，否则手机状态栏会显示底层背景，内容颜色没有延伸
+            activity.getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
+    }
+
+    /**
+     * 设置状态栏为深色调(白字)
+     */
+    protected void setDarkStatusBar(Fragment fragment) {
+        if (fragment.getActivity() == null) {
+            return;
+        }
+        fragment.getActivity().getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                        View.SYSTEM_UI_FLAG_VISIBLE);
     }
 
 }
