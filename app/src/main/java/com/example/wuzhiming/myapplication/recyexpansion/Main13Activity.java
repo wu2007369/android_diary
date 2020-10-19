@@ -31,5 +31,10 @@ public class Main13Activity extends AppCompatActivity {
             startActivity(new Intent(this, WXReadDemoActivity.class));
         });
 
+        findViewById(R.id.btn_item_clip).setOnClickListener(v->{
+            startActivity(new Intent(this, RecyItemClipActivity.class));
+        });
+
+
     }
 }
