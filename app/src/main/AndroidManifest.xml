@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".recyexpansion.RecyItemClipActivity"></activity>
+        <activity android:name=".recyexpansion.DecorationTestActivity"></activity>
+        <activity android:name=".recyexpansion.RecyItemClipActivity" />
         <activity android:name=".coordinatorlayout.RecyDistanceListenerActivity" />
         <activity android:name=".coordinatorlayout.PushNestedScrollUseActivity" />
         <activity android:name=".DialogTestActivity" />

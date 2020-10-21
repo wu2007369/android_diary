@@ -35,6 +35,10 @@ public class Main13Activity extends AppCompatActivity {
             startActivity(new Intent(this, RecyItemClipActivity.class));
         });
 
+        findViewById(R.id.btn_item_decoration).setOnClickListener(v->{
+            startActivity(new Intent(this, DecorationTestActivity.class));
+        });
+
 
     }
 }
