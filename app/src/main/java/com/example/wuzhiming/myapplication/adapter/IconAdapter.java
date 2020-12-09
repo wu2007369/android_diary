@@ -42,6 +42,11 @@ public class IconAdapter extends RecyclerView.Adapter {
         return mDataList.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return position%getItemCount();
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
 
