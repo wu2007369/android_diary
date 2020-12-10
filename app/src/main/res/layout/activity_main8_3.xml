@@ -12,23 +12,31 @@
             android:id="@+id/appbarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="this is title"
-                android:background="@color/checked"
-                app:layout_scrollFlags="scroll"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                android:minHeight="100dp"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="this is title"
+                    android:background="@color/checked"
 
-                />
+                    />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="this is title2"
-                android:background="@color/design_default_color_primary"
-                app:layout_scrollFlags="scroll|enterAlways"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="this is title2"
+                    android:background="@color/design_default_color_primary"
 
-                />
+                    />
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -43,6 +51,7 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

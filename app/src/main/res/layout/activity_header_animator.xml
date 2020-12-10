@@ -9,11 +9,45 @@
         android:id="@+id/btn8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="coordinaterLayout的使用"
+        android:text="coordinaterLayout：置顶+scroll+scroll|enterAlways"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn1"/>
 
+    <Button
+        android:id="@+id/btn11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coordinaterLayout:置顶+snap"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn8"/>
+
+    <Button
+        android:id="@+id/btn12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coordinaterLayout：置顶+scroll|enterAlways|enterAlwaysCollapsed"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn11"/>
+
+    <Button
+        android:id="@+id/btn13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coordinaterLayout,appbarLayout与recyclerview替换位置是无效的"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn12"/>
+    <Button
+        android:id="@+id/btn14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coordinaterLayout,nestedScrollView可以处理与recycler的嵌套冲突"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn13"/>
     <Button
         android:id="@+id/btn9"
         android:layout_width="wrap_content"
@@ -21,7 +55,7 @@
         android:text="折叠式布局的使用2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn8"/>
+        app:layout_constraintTop_toBottomOf="@id/btn14"/>
 
     <Button
         android:id="@+id/btn10"

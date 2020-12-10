@@ -14,20 +14,10 @@
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="this is title"
-                android:background="@color/checked"
-                app:layout_scrollFlags="scroll"
-
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="this is title2"
-                android:background="@color/design_default_color_primary"
-                app:layout_scrollFlags="scroll|enterAlways"
-
+                android:layout_height="300dp"
+                android:text="snap"
+                android:background="@color/color_FF6633"
+                app:layout_scrollFlags="scroll|snap"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -43,6 +33,7 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
