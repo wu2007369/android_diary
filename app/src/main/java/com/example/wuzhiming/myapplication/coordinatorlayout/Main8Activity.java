@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +33,7 @@ public class Main8Activity extends AppCompatActivity {
     AppBarLayout appbarLayout;
     RecyclerView recy;
     IconAdapter mAdapter;
+    NestedScrollView mNestedScrollView;
 
     private RecyclerView.OnScrollListener mOnScrollListener=new RecyclerView.OnScrollListener() {
         private int mmRvScrollY;
@@ -67,6 +69,9 @@ public class Main8Activity extends AppCompatActivity {
             case 5:
                 setContentView(R.layout.activity_main8_5);
                 break;
+            case 6:
+                setContentView(R.layout.activity_main8_6);
+                break;
         }
 
         ActionBar actionBar = getSupportActionBar();
@@ -92,6 +97,8 @@ public class Main8Activity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     @Override

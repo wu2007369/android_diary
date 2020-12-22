@@ -48,6 +48,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn13"/>
+
+    <Button
+        android:id="@+id/btn15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="coordinaterLayout,底部behavior的效果"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn14"/>
     <Button
         android:id="@+id/btn9"
         android:layout_width="wrap_content"
@@ -55,7 +64,7 @@
         android:text="折叠式布局的使用2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn14"/>
+        app:layout_constraintTop_toBottomOf="@id/btn15"/>
 
     <Button
         android:id="@+id/btn10"

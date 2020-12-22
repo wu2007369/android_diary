@@ -20,7 +20,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".recyexpansion.DecorationTestActivity"></activity>
+        <activity android:name=".service.ServiceUseActivity"></activity>
+
+        <service
+            android:name=".service.AIDLService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+
+                 <action android:name="suisuibianbian"/>
+<!--                <action android:name="com.example.wuzhiming.myapplication.action" />-->
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".recyexpansion.DecorationTestActivity" />
         <activity android:name=".recyexpansion.RecyItemClipActivity" />
         <activity android:name=".coordinatorlayout.RecyDistanceListenerActivity" />
         <activity android:name=".coordinatorlayout.PushNestedScrollUseActivity" />
