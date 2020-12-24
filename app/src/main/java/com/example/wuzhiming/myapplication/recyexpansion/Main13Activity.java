@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.wuzhiming.myapplication.Main3Activity;
 import com.example.wuzhiming.myapplication.R;
 import com.example.wuzhiming.myapplication.recyexpansion.diff.DiffActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.suspension.WXReadDemoActivity;
@@ -21,6 +20,13 @@ public class Main13Activity extends AppCompatActivity {
             startActivity(new Intent(this, Main3Activity.class));
 
         });
+
+        findViewById(R.id.btnFlow).setOnClickListener(v->{
+            startActivity(new Intent(this, FlowActivity.class));
+
+        });
+
+
 
         findViewById(R.id.btn_diff).setOnClickListener(v->{
 

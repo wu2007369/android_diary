@@ -24,10 +24,10 @@ public class ItemClipAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == 0) {
-            return new recyAdapter.ViewHolder(LayoutInflater.from(mContext)
+            return new MatchItemAdapter.ViewHolder(LayoutInflater.from(mContext)
                     .inflate(R.layout.item_color_fulled, parent, false));
         } else {
-            return new recyAdapter.ViewHolder(LayoutInflater.from(mContext)
+            return new MatchItemAdapter.ViewHolder(LayoutInflater.from(mContext)
                     .inflate(R.layout.item_top_round, parent, false));
         }
     }

@@ -20,16 +20,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".service.ServiceUseActivity"></activity>
+        <activity android:name=".recyexpansion.FlowActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
+        <activity android:name=".service.ServiceUseActivity" />
 
         <service
             android:name=".service.AIDLService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-
-                 <action android:name="suisuibianbian"/>
-<!--                <action android:name="com.example.wuzhiming.myapplication.action" />-->
+                <action android:name="suisuibianbian" />
+                <!-- <action android:name="com.example.wuzhiming.myapplication.action" /> -->
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -79,7 +81,7 @@
             android:name=".Main5Activity"
             android:theme="@style/dialogActivityTheme" />
         <activity android:name=".immerse.Main4Activity" />
-        <activity android:name=".Main3Activity" />
+        <activity android:name=".recyexpansion.Main3Activity" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"

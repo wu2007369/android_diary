@@ -13,10 +13,10 @@ import com.example.wuzhiming.myapplication.R;
 
 import java.util.List;
 
-public class recyAdapter extends RecyclerView.Adapter {
+public class MatchItemAdapter extends RecyclerView.Adapter {
     List<String> mdata;
     Context mContext;
-    public recyAdapter(List<String> mdata,Context mContext) {
+    public MatchItemAdapter(List<String> mdata, Context mContext) {
         this.mdata=mdata;
         this.mContext=mContext;
     }
