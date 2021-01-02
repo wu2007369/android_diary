@@ -83,10 +83,10 @@ public class FlowActivity extends AppCompatActivity {
             public void run() {
                 int height = mRecyclerView.getHeight();
                 Log.i("flow","recyc height="+height);
-                if (height>500){
+/*                if (height>500){
                     ((ConstraintLayout.LayoutParams) mRecyclerView.getLayoutParams()).height=500;
                     mRecyclerView.requestLayout();
-                }
+                }*/
 
             }
         });
