@@ -14,6 +14,7 @@ import com.example.wuzhiming.myapplication.coordinatorlayout.Main9Activity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
 import com.example.wuzhiming.myapplication.immerse.ImmerseActivity;
 import com.example.wuzhiming.myapplication.intent.IntentActivity;
+import com.example.wuzhiming.myapplication.jetpacktest.JetPackTestActivity;
 import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
 import com.example.wuzhiming.myapplication.service.ServiceUseActivity;
@@ -52,6 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn16).setOnClickListener(this);
         findViewById(R.id.btn17).setOnClickListener(this);
         findViewById(R.id.btn18).setOnClickListener(this);
+        findViewById(R.id.btn19).setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +101,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn18:
                 startActivity(new Intent(this, ServiceUseActivity.class));
+                break;
+            case R.id.btn19:
+                startActivity(new Intent(this, JetPackTestActivity.class));
                 break;
             default:
                 break;

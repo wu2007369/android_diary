@@ -20,9 +20,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".recyexpansion.FlowActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
+        <activity android:name=".jetpacktest.NormalUseActivity"></activity>
+        <activity android:name=".jetpacktest.JetPackTestActivity" />
+        <activity
+            android:name=".recyexpansion.FlowActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".service.ServiceUseActivity" />
 
         <service

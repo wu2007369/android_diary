@@ -3,4 +3,24 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="html_value">[html标记语言(^[<b><font color="#FF4081">my html text</font></b>]]</string>
     <string name="html_value_and_placeholder">[html标记语言+占位符(^[<b><font color="#FF4081">%s</font></b>]]</string>
+
+
+    <string name="phone">打电话</string>
+    <string name="contacts">联系人</string>
+    <string name="collection">收藏</string>
+
+    <string name="phone1">1</string>
+    <string name="phone2">2</string>
+    <string name="phone3">3</string>
+    <string name="phone4">4</string>
+    <string name="phone5">5</string>
+    <string name="phone6">6</string>
+    <string name="phone7">7</string>
+    <string name="phone8">8</string>
+    <string name="phone9">9</string>
+    <string name="phone0">0</string>
+
+    <string name="phonexin">*</string>
+    <string name="phonejin">#</string>
+
 </resources>
