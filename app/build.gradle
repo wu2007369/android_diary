@@ -43,4 +43,5 @@ dependencies {
     implementation 'com.github.Liberuman:ShadowDrawable:0.1'
     compile group: 'androidx.viewpager2', name: 'viewpager2', version: '1.0.0'
     implementation 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }

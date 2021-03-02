@@ -180,7 +180,6 @@ public class DialogTestActivity extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();      //创建AlertDialog对象
         dialog.show();                              //显示对话框
-        dialog.show();                              //显示对话框
     }
 
     /**
