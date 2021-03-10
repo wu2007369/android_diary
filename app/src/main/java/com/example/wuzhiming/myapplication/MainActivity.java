@@ -36,9 +36,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Button btn5 = findViewById(R.id.btn5);
         btn5.setOnClickListener(this);
 
-        Button btn6 = findViewById(R.id.btn6);
-        btn6.setOnClickListener(this);
-
         Button btn7 = findViewById(R.id.btn7);
         btn7.setOnClickListener(this);
 
@@ -68,11 +65,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(new Intent(this, ImmerseActivity.class));
                 break;
 
-            case R.id.btn6:
-                startActivity(new Intent(this,Main5Activity.class));
-                overridePendingTransition(R.anim.pop_bottom_in_normal, R.anim.agile_fix_stand);
-
-                break;
             case R.id.btn7:
                 startActivity(new Intent(this,Main7Activity.class));
                 break;
