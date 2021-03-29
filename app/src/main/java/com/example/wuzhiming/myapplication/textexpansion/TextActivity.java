@@ -12,8 +12,10 @@ import android.text.Html;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.util.Log;
@@ -22,6 +24,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wuzhiming.myapplication.R;
 import com.example.wuzhiming.myapplication.utils.DpPxExchange;
@@ -35,6 +38,23 @@ public class TextActivity extends AppCompatActivity {
     private TextView imageText1;
     private TextView imageText2;
     private String TAG="TextActivity";
+
+    private class TextClick extends ClickableSpan {
+        @Override
+        public void onClick(View widget) {
+            //在此处理点击事件
+            Log.e("------->", "点击了");
+            String content = ((TextView) widget).getText().toString();
+            Toast.makeText(TextActivity.this,"点击了"+content,Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void updateDrawState(TextPaint ds) {
+//            Toast.makeText(TextActivity.this,"点击了"+ds,Toast.LENGTH_SHORT).show();
+//            ds.setColor(ds.linkColor);
+//            ds.setUnderlineText(true);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +77,14 @@ public class TextActivity extends AppCompatActivity {
         spannableBuilder.setSpan(colorSpan, 1, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);*/
         spannableBuilder.setSpan(CharacterStyle.wrap(colorSpan), 14, a.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         spannableBuilder.setSpan(CharacterStyle.wrap(colorSpan), 1, 2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+
+        spannableBuilder.setSpan(new TextClick(), 14, a.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableBuilder.setSpan(new TextClick(), 1, 2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+
         text3=findViewById(R.id.html_text4);
-        // 不设置点击不生效
-//        text3.setMovementMethod(LinkMovementMethod.getInstance());
+
+        text3.setMovementMethod(LinkMovementMethod.getInstance());// 不设置点击不生效
+        text3.setHighlightColor(getResources().getColor(android.R.color.transparent));//不设置会有背景色
         text3.setText(spannableBuilder);
 
 
