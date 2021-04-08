@@ -83,4 +83,29 @@
         android:layout_marginTop="15dp"
         />
 
+
+    <RadioButton
+        android:id="@+id/iconChooseWehcat"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginRight="30dp"
+        android:button="@null"
+        android:background="@drawable/radio_bg"
+        app:layout_constraintTop_toBottomOf="@id/text_with_image2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <RadioButton
+        android:id="@+id/icon2"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:buttonTint="@drawable/radiobtn_circlecolor"
+        android:background="@drawable/radiobtn_ripplecolor"
+        app:layout_constraintTop_toBottomOf="@id/text_with_image2"
+        app:layout_constraintLeft_toRightOf="@id/iconChooseWehcat"
+
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
