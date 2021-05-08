@@ -8,13 +8,24 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.wuzhiming.myapplication.dialog.VerificationScanCodeOrderDialog;
+import com.example.wuzhiming.myapplication.textexpansion.TextActivity;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -30,6 +41,22 @@ public class DialogTestActivity extends AppCompatActivity {
     Calendar calendar= Calendar.getInstance(Locale.CHINA);
     private VerificationScanCodeOrderDialog mDialog;
 
+    private class TextClick extends ClickableSpan {
+        @Override
+        public void onClick(View widget) {
+            //在此处理点击事件
+            Log.e("------->", "点击了");
+            String content = ((TextView) widget).getText().toString();
+            Toast.makeText(DialogTestActivity.this,"点击了"+content,Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void updateDrawState(TextPaint ds) {
+//            Toast.makeText(TextActivity.this,"点击了"+ds,Toast.LENGTH_SHORT).show();
+//            ds.setColor(ds.linkColor);
+//            ds.setUnderlineText(true);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +72,50 @@ public class DialogTestActivity extends AppCompatActivity {
         findViewById(R.id.btn6).setOnClickListener(v->showTimeDialog());
         findViewById(R.id.btn8).setOnClickListener(v->showCustomeDialog());
         findViewById(R.id.btn9).setOnClickListener(v->showWindowParamsDialog());
+        findViewById(R.id.btn10).setOnClickListener(v->showDialogContentClick());
 
+    }
+
+    private void showDialogContentClick() {
+        final TextView message = new TextView(this);
+        // i.e.: R.string.dialog_message =>
+        // "Test this dialog following the link to dtmilano.blogspot.com"
+        String a="1234567890abcdefghijklmn";
+        SpannableStringBuilder spannableBuilder = new SpannableStringBuilder(a);
+        // 单独设置字体颜色
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#3072F6"));
+
+/*        spannableBuilder.setSpan(colorSpan, 14, a.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableBuilder.setSpan(colorSpan, 1, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);*/
+        spannableBuilder.setSpan(CharacterStyle.wrap(colorSpan), 14, a.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableBuilder.setSpan(CharacterStyle.wrap(colorSpan), 1, 2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableBuilder.setSpan(new TextClick(), 14, a.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableBuilder.setSpan(new TextClick(), 1, 2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        message.setHighlightColor(getResources().getColor(android.R.color.transparent));//不设置会有背景色
+        message.setMovementMethod(LinkMovementMethod.getInstance());
+        message.setText(spannableBuilder);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示：");
+        builder.setMessage(spannableBuilder);
+//        builder.setView(message);
+        builder.setCancelable(false);            //点击对话框以外的区域是否让对话框消失
+
+        //设置正面按钮
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(DialogTestActivity.this, "你点击了确定", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();      //创建AlertDialog对象
+        dialog.show();                              //显示对话框
+        TextView textView = dialog.findViewById(android.R.id.message);
+        textView.setHighlightColor(getResources().getColor(android.R.color.transparent));//不设置会有背景色
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+//        textView.setText(spannableBuilder);
     }
 
     private void showWindowParamsDialog() {
@@ -298,6 +368,11 @@ public class DialogTestActivity extends AppCompatActivity {
         });
         AlertDialog dialog = builder.create();      //创建AlertDialog对象
         dialog.show();                               //显示对话框
+
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(
+                Color.parseColor("#D0021B"));
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(
+                Color.parseColor("#3072F6"));
     }
 
 }

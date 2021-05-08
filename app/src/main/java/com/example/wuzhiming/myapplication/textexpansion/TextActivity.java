@@ -1,12 +1,15 @@
 package com.example.wuzhiming.myapplication.textexpansion;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
@@ -22,6 +25,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +34,7 @@ import android.widget.Toast;
 import com.example.wuzhiming.myapplication.R;
 import com.example.wuzhiming.myapplication.utils.DpPxExchange;
 import com.example.wuzhiming.myapplication.utils.PhoneUtils;
+import com.example.wuzhiming.myapplication.utils.ScreenUtils;
 
 public class TextActivity extends AppCompatActivity {
 
@@ -38,6 +44,7 @@ public class TextActivity extends AppCompatActivity {
     private TextView imageText1;
     private TextView imageText2;
     private String TAG="TextActivity";
+    private RadioGroup rg;
 
     private class TextClick extends ClickableSpan {
         @Override
@@ -56,6 +63,7 @@ public class TextActivity extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +112,25 @@ public class TextActivity extends AppCompatActivity {
 
         imageText2=findViewById(R.id.text_with_image2);
         addCustomeViewToText();
+
+
+        rg=(RadioGroup)findViewById(R.id.radio_group); //定义radioGroup控件
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {//表示RadioGroup中的radioButton状态切换时触发的监听
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                RadioButton rb = (RadioButton)findViewById(checkedId); //选中radioButton的对象资源id获取radioButton对象
+                String str = rb.getText().toString();//获取选中radioButton的文本
+                Toast.makeText(TextActivity.this,"Hello"+str,Toast.LENGTH_SHORT).show();
+            }
+        });
+/*        RadioButton radio1 = findViewById(R.id.radio1);
+        Drawable drawable = radio1.getButtonDrawable();
+        drawable.setBounds(0, 0, ScreenUtils.dp2px(this, 10), ScreenUtils.dp2px(this, 10));
+        radio1.setButtonDrawable(drawable);*/
+/*        Drawable[] drawables = radio1.getCompoundDrawables();
+        Rect r = new Rect(0, 0, ScreenUtils.dp2px(this, 10), ScreenUtils.dp2px(this, 10));
+        drawables[0].setBounds(r);
+        radio1.setCompoundDrawables(drawables[0], null, null, null);*/
     }
 
     private void addCustomeViewToText() {
