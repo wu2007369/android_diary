@@ -2,11 +2,13 @@ package com.example.wuzhiming.myapplication.textexpansion;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -131,6 +133,23 @@ public class TextActivity extends AppCompatActivity {
         Rect r = new Rect(0, 0, ScreenUtils.dp2px(this, 10), ScreenUtils.dp2px(this, 10));
         drawables[0].setBounds(r);
         radio1.setCompoundDrawables(drawables[0], null, null, null);*/
+
+
+        TextView ttfTest = findViewById(R.id.ttfTest);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.roboto_light);
+        ttfTest.setTypeface(typeface);
+
+        TextView ttfTest2 = findViewById(R.id.ttfTest2);
+        Typeface typeface2 = ResourcesCompat.getFont(this, R.font.roboto_thin);
+        ttfTest2.setTypeface(typeface2);
+
+        TextView ttfTest3 = findViewById(R.id.ttfTest3);
+        Typeface typeface3 = ResourcesCompat.getFont(this, R.font.roboto_medium);
+        ttfTest3.setTypeface(typeface3);
+
+        TextView ttfTest4 = findViewById(R.id.ttfTest4);
+        Typeface typeface4 = ResourcesCompat.getFont(this, R.font.roboto_regular);
+        ttfTest4.setTypeface(typeface4);
     }
 
     private void addCustomeViewToText() {

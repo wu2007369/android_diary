@@ -21,8 +21,14 @@ android {
 
 
     // dataBinding 的引入  方式一
-    dataBinding {
+/*    dataBinding {
         enabled true
+    }*/
+
+    // dataBinding 的引入  方式二
+    buildFeatures {
+        viewBinding true
+        dataBinding true
     }
 
     compileOptions {
@@ -44,4 +50,9 @@ dependencies {
     compile group: 'androidx.viewpager2', name: 'viewpager2', version: '1.0.0'
     implementation 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    implementation group: 'androidx.lifecycle', name: 'lifecycle-livedata-ktx', version: '2.3.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
