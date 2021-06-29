@@ -22,8 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PdfAboutActivity2"></activity>
-        <activity android:name=".PdfAboutActivity" />
+        <activity android:name=".itext.PdfAboutActivity2"></activity>
+        <activity android:name=".itext.PdfAboutActivity" />
         <activity android:name=".WidegetAboutActivity" />
         <activity android:name=".LoadingTestActivity" />
         <activity android:name=".jetpacktest.NormalUseActivity" />

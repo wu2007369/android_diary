@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication;
+package com.example.wuzhiming.myapplication.itext;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.wuzhiming.myapplication.R;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Rectangle;

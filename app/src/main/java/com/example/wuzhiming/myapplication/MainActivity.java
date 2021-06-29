@@ -15,6 +15,7 @@ import com.example.wuzhiming.myapplication.coordinatorlayout.HeaderAnimatorActiv
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
 import com.example.wuzhiming.myapplication.immerse.ImmerseActivity;
 import com.example.wuzhiming.myapplication.intent.IntentActivity;
+import com.example.wuzhiming.myapplication.itext.PdfAboutActivity;
 import com.example.wuzhiming.myapplication.jetpacktest.JetPackTestActivity;
 import com.example.wuzhiming.myapplication.period.PeriodActivity;
 import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
@@ -110,7 +111,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn22:
                 if (requestPermission()){
 //                    startActivity(new Intent(this, PdfAboutActivity2.class));
-                    startActivity(new Intent(this,PdfAboutActivity.class));
+                    startActivity(new Intent(this, PdfAboutActivity.class));
                 }
                 break;
             default:
