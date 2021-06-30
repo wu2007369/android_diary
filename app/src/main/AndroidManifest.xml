@@ -53,7 +53,10 @@
         <activity android:name=".uieffect.ShadowActivity" />
         <activity android:name=".uieffect.UiEffectActivity" />
         <activity android:name=".coordinatorlayout.TitleGradientAnimateActivity" />
-        <activity android:name=".textexpansion.TextActivity" />
+        <activity android:name=".textexpansion.TextActivity"
+            android:windowSoftInputMode = "adjustResize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity android:name=".recyexpansion.suspension.WXReadDemoActivity" />
         <activity
             android:name=".immerse.ImmerseWebviewActivity"

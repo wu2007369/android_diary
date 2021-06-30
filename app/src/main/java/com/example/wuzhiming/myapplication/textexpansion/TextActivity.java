@@ -29,6 +29,8 @@ import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -78,6 +80,7 @@ public class TextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
 
+        setHeader();
         text = findViewById(R.id.html_text2);
         String value = getString(R.string.html_value_and_placeholder, "我要替换");
         text.setText(Html.fromHtml(value));
@@ -159,6 +162,17 @@ public class TextActivity extends AppCompatActivity {
 
         findViewById(R.id.btnEditAddBullet).setOnClickListener(v -> editAddBullet2(findViewById(R.id.edit2)));
         findViewById(R.id.btnRemoveEditAddBullet).setOnClickListener(v -> removeAddBullet2(findViewById(R.id.edit2)));
+    }
+
+    private void setHeader() {
+        Window window = this.getWindow();
+        //添加Flag把状态栏设为可绘制模式
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        //设置状态栏颜色(任意颜色)
+        window.setStatusBarColor(getColor(R.color.white));
+        //设置系统状态栏处于可见状态
+//        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);//状态栏白字
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//状态栏 黑字
     }
 
 
