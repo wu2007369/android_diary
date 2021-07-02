@@ -209,6 +209,76 @@
                 android:text="删除 段落符号、编号"
                 app:layout_constraintLeft_toRightOf="@id/btnEditAddBullet"
                 app:layout_constraintTop_toBottomOf="@id/edit2" />
+
+            <EditText
+                android:id="@+id/typefaceTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="typeface 测试"
+
+                app:layout_constraintTop_toBottomOf="@id/btnRemoveEditAddBullet" />
+            <!--            android:textStyle="bold|italic"-->
+
+            <Button
+                android:id="@+id/typefaceSpan1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typefaceTest" />
+            <Button
+                android:id="@+id/typefaceSpan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bold"
+                app:layout_constraintLeft_toRightOf="@id/typefaceSpan1"
+                app:layout_constraintTop_toBottomOf="@id/typefaceTest" />
+            <Button
+                android:id="@+id/typefaceSpan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="italic"
+                app:layout_constraintLeft_toRightOf="@id/typefaceSpan2"
+                app:layout_constraintTop_toBottomOf="@id/typefaceTest" />
+            <Button
+                android:id="@+id/typefaceSpan4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bold and Italic"
+
+                app:layout_constraintLeft_toRightOf="@id/typefaceSpan3"
+                app:layout_constraintTop_toBottomOf="@id/typefaceTest" />
+
+            <Button
+                android:id="@+id/customeSpan1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="custom span1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typefaceSpan1" />
+            <Button
+                android:id="@+id/customeSpan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="custom2"
+                app:layout_constraintLeft_toRightOf="@id/customeSpan1"
+                app:layout_constraintTop_toBottomOf="@id/typefaceSpan1" />
+            <Button
+                android:id="@+id/customeSpan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="custom3"
+                app:layout_constraintLeft_toRightOf="@id/customeSpan2"
+                app:layout_constraintTop_toBottomOf="@id/typefaceSpan1" />
+            <Button
+                android:id="@+id/customeSpan4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="custom4"
+                app:layout_constraintLeft_toRightOf="@id/customeSpan3"
+                app:layout_constraintTop_toBottomOf="@id/typefaceSpan1" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

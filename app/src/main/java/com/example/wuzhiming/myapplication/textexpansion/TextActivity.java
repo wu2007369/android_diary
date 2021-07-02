@@ -26,6 +26,7 @@ import android.text.style.CharacterStyle;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -162,6 +163,35 @@ public class TextActivity extends AppCompatActivity {
 
         findViewById(R.id.btnEditAddBullet).setOnClickListener(v -> editAddBullet2(findViewById(R.id.edit2)));
         findViewById(R.id.btnRemoveEditAddBullet).setOnClickListener(v -> removeAddBullet2(findViewById(R.id.edit2)));
+
+        EditText typefacetest=findViewById(R.id.typefaceTest);
+        Editable edit = typefacetest.getText();
+
+        findViewById(R.id.typefaceSpan1).setOnClickListener(v -> {
+            edit.setSpan(new StyleSpan(Typeface.NORMAL),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+        findViewById(R.id.typefaceSpan2).setOnClickListener(v -> {
+            edit.setSpan(new StyleSpan(Typeface.BOLD),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+        findViewById(R.id.typefaceSpan3).setOnClickListener(v -> {
+            edit.setSpan(new StyleSpan(Typeface.ITALIC),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+        findViewById(R.id.typefaceSpan4).setOnClickListener(v -> {
+            edit.setSpan(new StyleSpan(Typeface.BOLD_ITALIC),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+
+        findViewById(R.id.customeSpan1).setOnClickListener(v->{
+            edit.setSpan(new CustomeStyleSpan(Typeface.NORMAL),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+        findViewById(R.id.customeSpan2).setOnClickListener(v->{
+            edit.setSpan(new CustomeStyleSpan(Typeface.BOLD),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+        findViewById(R.id.customeSpan3).setOnClickListener(v->{
+            edit.setSpan(new CustomeStyleSpan(Typeface.ITALIC),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
+        findViewById(R.id.customeSpan4).setOnClickListener(v->{
+            edit.setSpan(new CustomeStyleSpan(Typeface.BOLD_ITALIC),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        });
     }
 
     private void setHeader() {
