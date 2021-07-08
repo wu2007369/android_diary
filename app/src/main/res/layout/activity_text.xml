@@ -146,8 +146,21 @@
                     android:text="hahah"
                     app:layout_constraintLeft_toRightOf="@id/iconChooseWehcat"
                     app:layout_constraintTop_toBottomOf="@id/text_with_image2"
+                    />
+                <RadioButton
+                    android:id="@+id/radio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/radiobtn_ripplecolor2"
+                    android:button="@drawable/radio_bg2"
+                    android:text="test"
+                    app:layout_constraintLeft_toRightOf="@id/iconChooseWehcat"
+                    app:layout_constraintTop_toBottomOf="@id/text_with_image2"
 
                     />
+
             </RadioGroup>
 
 
@@ -218,7 +231,10 @@
                 android:text="typeface 测试"
 
                 app:layout_constraintTop_toBottomOf="@id/btnRemoveEditAddBullet" />
-            <!--            android:textStyle="bold|italic"-->
+<!--
+            xml中设置的字体属性，在append之后并不会生效
+            android:textStyle="bold|italic"
+            android:textSize="30sp"-->
 
             <Button
                 android:id="@+id/typefaceSpan1"
@@ -278,6 +294,21 @@
                 android:text="custom4"
                 app:layout_constraintLeft_toRightOf="@id/customeSpan3"
                 app:layout_constraintTop_toBottomOf="@id/typefaceSpan1" />
+
+            <Button
+                android:id="@+id/btnEditAppend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EditAppend"
+                app:layout_constraintLeft_toLeftOf="@id/customeSpan1"
+                app:layout_constraintTop_toBottomOf="@id/customeSpan1" />
+            <Button
+                android:id="@+id/btnEditDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EditDelete"
+                app:layout_constraintLeft_toLeftOf="@id/customeSpan2"
+                app:layout_constraintTop_toBottomOf="@id/customeSpan1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

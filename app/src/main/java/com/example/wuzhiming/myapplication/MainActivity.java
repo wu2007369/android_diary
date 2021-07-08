@@ -56,6 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn20).setOnClickListener(this);
         findViewById(R.id.btn21).setOnClickListener(this);
         findViewById(R.id.btn22).setOnClickListener(this);
+        findViewById(R.id.btn23).setOnClickListener(this);
     }
 
     @Override
@@ -113,6 +114,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //                    startActivity(new Intent(this, PdfAboutActivity2.class));
                     startActivity(new Intent(this, PdfAboutActivity.class));
                 }
+                break;
+            case R.id.btn23:
+                startActivity(new Intent(this,CustomeWidegetActivity.class));
                 break;
             default:
                 break;

@@ -161,8 +161,9 @@ public class TextActivity extends AppCompatActivity {
         ttfTest4.setTypeface(typeface4);
 
 
-        findViewById(R.id.btnEditAddBullet).setOnClickListener(v -> editAddBullet2(findViewById(R.id.edit2)));
-        findViewById(R.id.btnRemoveEditAddBullet).setOnClickListener(v -> removeAddBullet2(findViewById(R.id.edit2)));
+        EditText edit2 = findViewById(R.id.edit2);
+        findViewById(R.id.btnEditAddBullet).setOnClickListener(v -> editAddBullet2(edit2));
+        findViewById(R.id.btnRemoveEditAddBullet).setOnClickListener(v -> removeAddBullet2(edit2));
 
         EditText typefacetest=findViewById(R.id.typefaceTest);
         Editable edit = typefacetest.getText();
@@ -192,6 +193,19 @@ public class TextActivity extends AppCompatActivity {
         findViewById(R.id.customeSpan4).setOnClickListener(v->{
             edit.setSpan(new CustomeStyleSpan(Typeface.BOLD_ITALIC),0,edit.length(),Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         });
+
+        Editable tempEdit = edit.insert(0, "\n");
+        findViewById(R.id.btnEditAppend).setOnClickListener(v->{
+            edit2.getText().append(tempEdit);
+
+
+//            edit.insert(0,edit2.getText());
+        });
+        findViewById(R.id.btnEditDelete).setOnClickListener(v->{
+            Log.e("lenth=","edit2.length()="+edit2.length()+";tempEdit.length()="+tempEdit.length());
+            edit2.getText().delete(edit2.length()-tempEdit.length(),edit2.length());
+        });
+
     }
 
     private void setHeader() {
