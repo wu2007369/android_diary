@@ -13,6 +13,7 @@
         tools:context=".CustomeWidegetActivity">
 
         <LinearLayout
+            android:id="@+id/circleBg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -57,6 +58,70 @@
                 android:layout_marginLeft="5dp"
                 android:background="@color/color_1D81FF" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/radiusBg"
+            app:layout_constraintTop_toBottomOf="@id/circleBg"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            >
+
+            <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg"
+                android:scaleType="centerCrop"
+                app:radius="15dp"
+                />
+
+            <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg"
+                android:scaleType="centerCrop"
+                app:radius="5dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="10dp"
+                app:left_top_radius="15dp"
+                app:right_bottom_radius="15dp"
+                />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="10dp"
+                app:left_top_radius="15dp"
+                app:right_bottom_radius="15dp"
+                android:background="@drawable/shape_round_corners_10_white"
+                />
+        </LinearLayout>
+
+<!--        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/radiusBg"
+            android:layout_marginTop="10dp"
+            />-->
+
+        <com.example.wuzhiming.myapplication.wideget.CustomeCalendar
+            android:id="@+id/recyCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/radiusBg"
+            android:layout_marginTop="10dp"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

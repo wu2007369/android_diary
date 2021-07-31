@@ -310,6 +310,16 @@
                 app:layout_constraintLeft_toLeftOf="@id/customeSpan2"
                 app:layout_constraintTop_toBottomOf="@id/customeSpan1" />
 
+            <TextView
+                android:id="@+id/text_tpdraftadapter_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/text_icon_textprint_del"
+                android:drawablePadding="6dp"
+                android:text="xcscs"
+                app:layout_constraintTop_toBottomOf="@id/btnEditDelete"
+                app:layout_constraintRight_toRightOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

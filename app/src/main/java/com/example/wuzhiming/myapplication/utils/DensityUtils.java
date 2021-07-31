@@ -1,6 +1,8 @@
 package com.example.wuzhiming.myapplication.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.TypedValue;
 
 /**
  * 分辨率单位转化
@@ -28,6 +30,11 @@ public class DensityUtils
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
+
+    public static float dip2px(float dp) {
+        return TypedValue.applyDimension(1, dp, Resources.getSystem().getDisplayMetrics());
+    }
+
     
     /**
      * 将px值转换为sp值，保证文字大小不变

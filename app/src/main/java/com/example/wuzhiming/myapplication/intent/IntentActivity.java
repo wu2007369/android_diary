@@ -16,6 +16,7 @@ import com.example.wuzhiming.myapplication.R;
 
 public class IntentActivity extends AppCompatActivity implements View.OnClickListener {
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_PDF_CAPTURE = 2;
     Uri locationForPhotos;
     private ImageView image;
 
@@ -30,6 +31,7 @@ public class IntentActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
         findViewById(R.id.btn4).setOnClickListener(this);
+        findViewById(R.id.btn5).setOnClickListener(this);
 
     }
 
@@ -71,6 +73,20 @@ public class IntentActivity extends AppCompatActivity implements View.OnClickLis
                 intent4.putExtra(MediaStore.EXTRA_OUTPUT,
                         Uri.withAppendedPath(locationForPhotos, "targetFilename"));
                 startActivityForResult(intent4, REQUEST_IMAGE_CAPTURE);
+                break;
+            case R.id.btn5:
+//                startActivity(new Intent(this,AliasActivity.class));
+                Intent intent5 = new Intent(Intent.ACTION_GET_CONTENT);
+                intent5.addCategory(Intent.CATEGORY_OPENABLE);
+
+//                                intent5.setType("*/*");
+
+/*                intent5.setType("application/*");
+                intent5.putExtra(Intent.EXTRA_MIME_TYPES,
+                        new String[]{"application/msword","application/pdf","text/plain"});*/
+
+                intent5.setType("application/pdf");
+                startActivityForResult(intent5, REQUEST_PDF_CAPTURE);
                 break;
             default:
                 break;
