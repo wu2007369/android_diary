@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.wuzhiming.myapplication.adapter.NumericWheelAdapter;
@@ -72,28 +74,8 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
                     ,calendar.get(Calendar.MONTH)//月份
                     ,calendar.get(Calendar.DAY_OF_MONTH))//日子
                     ;
-
-/*            try {
-                java.lang.reflect.Field[] datePickerDialogFields = dialog.getClass().getDeclaredFields();
-                for (java.lang.reflect.Field datePickerDialogField : datePickerDialogFields) {
-                    if (datePickerDialogField.getName().equals("mDatePicker")) {
-                        datePickerDialogField.setAccessible(true);
-                        DatePicker datePicker = (DatePicker) datePickerDialogField.get(dialog);
-                        java.lang.reflect.Field[] datePickerFields = datePickerDialogField.getType().getDeclaredFields();
-                        for (java.lang.reflect.Field datePickerField : datePickerFields) {
-                            Log.i("test", datePickerField.getName());
-                            if ("mDaySpinner".equals(datePickerField.getName())) {
-                                datePickerField.setAccessible(true);
-                                Object dayPicker = datePickerField.get(datePicker);
-                                ((View) dayPicker).setVisibility(View.GONE);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex) {
-            }*/
-
+//            dialog.getDatePicker().
+            hideDaySpiner(dialog.getDatePicker());
             //把日期对话框显示在界面上
             dialog.show();
 
@@ -101,6 +83,21 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
 
         shwoWheelView();
+
+        hideDaySpiner(binding.datePicker);
+    }
+
+    private void hideDaySpiner(DatePicker datePicker) {
+        //        binding.datePicker.findViewById(com.android.internal.R.id.day).setVisibility(View.GONE);
+        View ll=datePicker.getChildAt(0);
+        if (ll instanceof LinearLayout){
+            View spiners=((LinearLayout) ll).getChildAt(0);
+            if (spiners instanceof LinearLayout){
+                if (((LinearLayout) spiners).getChildCount()==3){
+                    ((LinearLayout) spiners).getChildAt(2).setVisibility(View.GONE);
+                }
+            }
+        }
     }
 
     @Override

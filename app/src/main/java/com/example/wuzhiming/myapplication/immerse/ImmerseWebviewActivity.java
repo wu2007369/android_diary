@@ -46,8 +46,12 @@ public class ImmerseWebviewActivity extends AppCompatActivity {
         setting.setBlockNetworkImage(false); // 解决图片不显示
         webview.setWebViewClient(new WebViewClient());
 
-
         String url="http://go.jinying.com";
+
+        if (getIntent()!=null){
+            url=getIntent().getStringExtra("url");
+        }
+
         webview.loadUrl(url);
 
         setHeader();
