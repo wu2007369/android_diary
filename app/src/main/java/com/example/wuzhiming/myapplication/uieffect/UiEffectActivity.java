@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.wuzhiming.myapplication.R;
 import com.example.wuzhiming.myapplication.utils.RotateTransformation;
@@ -53,16 +54,17 @@ public class UiEffectActivity extends AppCompatActivity {
         img7.setRotation(90f);
 
 
-//        Glide.with(this)
-//                .load(R.drawable.bg)
-//                .apply(RequestOptions.bitmapTransform(new RotateTransformation(false, 90)))
-//                .into(img9);
+        Glide.with(this)
+                .load(R.drawable.bg)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .apply(RequestOptions.bitmapTransform(new RotateTransformation(false, 90)))
+                .into(img9);
 
-        RotateTransformation rotateTransformation = new RotateTransformation(false, 270);
 
         Glide.with(this)
                 .load(R.drawable.bg)
-                .apply(RequestOptions.bitmapTransform(rotateTransformation))
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .apply(RequestOptions.bitmapTransform(new RotateTransformation(false, 270)))
                 .into(img10);
 
 /*        Glide.with(this)
