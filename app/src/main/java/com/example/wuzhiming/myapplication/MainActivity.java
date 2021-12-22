@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.wuzhiming.myapplication.base.BaseActivity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.HeaderAnimatorActivity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
 import com.example.wuzhiming.myapplication.immerse.ImmerseActivity;
@@ -22,6 +23,7 @@ import com.example.wuzhiming.myapplication.recyexpansion.Main13Activity;
 import com.example.wuzhiming.myapplication.service.ServiceUseActivity;
 import com.example.wuzhiming.myapplication.shape.ShapeActivity;
 import com.example.wuzhiming.myapplication.textexpansion.TextActivity;
+import com.example.wuzhiming.myapplication.thirdwidget.ThirdWidegetAct;
 import com.example.wuzhiming.myapplication.uieffect.UiEffectActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -57,6 +59,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn21).setOnClickListener(this);
         findViewById(R.id.btn22).setOnClickListener(this);
         findViewById(R.id.btn23).setOnClickListener(this);
+        findViewById(R.id.btn24).setOnClickListener(this);
     }
 
     @Override
@@ -117,6 +120,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn23:
                 startActivity(new Intent(this,CustomeWidegetActivity.class));
+                break;
+            case R.id.btn24:
+                startActivity(new Intent(this, ThirdWidegetAct.class));
                 break;
             default:
                 break;

@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication;
+package com.example.wuzhiming.myapplication.base;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
