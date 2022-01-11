@@ -116,4 +116,8 @@ public class OSUtils {
             return new BuildProperties();
         }
     }
+
+    public static boolean isAndroidQ() {
+        return Build.VERSION.SDK_INT >= 29;
+    }
 }

@@ -2,13 +2,11 @@ package com.example.wuzhiming.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView
-import com.example.wuzhiming.myapplication.adapter.CalendarListAdapter
 import com.example.wuzhiming.myapplication.databinding.ActivityCustomeWidegetBinding
-import com.example.wuzhiming.myapplication.entity.CalendarBean
+import com.example.wuzhiming.myapplication.utils.BitmapUtilKt
+import com.example.wuzhiming.myapplication.utils.ScreenUtils
 import java.util.*
 
 
@@ -26,12 +24,39 @@ class CustomeWidegetActivity : AppCompatActivity() {
         mDataBind.item3.setOnClickListener { v -> v.isSelected = true }
         mDataBind.item4.setOnClickListener { v -> v.isSelected = !v.isSelected }
 
-    /*    val adapter = CalendarListAdapter(getAllDay(7), this)
+        /*    val adapter = CalendarListAdapter(getAllDay(7), this)
 
-        mDataBind.recyCalendar.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
-        val mPagerSnapHelper = PagerSnapHelper()
-        mPagerSnapHelper.attachToRecyclerView(mDataBind.recyCalendar)
-        mDataBind.recyCalendar.adapter = adapter*/
+            mDataBind.recyCalendar.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
+            val mPagerSnapHelper = PagerSnapHelper()
+            mPagerSnapHelper.attachToRecyclerView(mDataBind.recyCalendar)
+            mDataBind.recyCalendar.adapter = adapter*/
+        mDataBind.longImg.test()
+        mDataBind.changeColor.setOnClickListener {
+            mDataBind.longImg.mPaint.color = ContextCompat.getColor(this, R.color.color_FF6633)
+            mDataBind.longImg.paintTextSize = ScreenUtils.dp2px(this, 25f).toFloat()
+//            mDataBind.longImg.mPaint.textSize = ScreenUtils.dp2px(this, 25f).toFloat()
+//            mDataBind.longImg.refreshView()
+            mDataBind.longImg.invalidate()
+        }
+        mDataBind.changeSize.setOnClickListener {
+            mDataBind.longImg.mPaint.color = ContextCompat.getColor(this, R.color.color_1D81FF)
+            mDataBind.longImg.paintTextSize = ScreenUtils.dp2px(this, 5f).toFloat()
+//            mDataBind.longImg.mPaint.textSize = ScreenUtils.dp2px(this, 5f).toFloat()
+//            mDataBind.longImg.refreshView()
+            mDataBind.longImg.invalidate()
+        }
+
+        mDataBind.clear.setOnClickListener {
+            mDataBind.longImg.waterMarkText=""
+            mDataBind.longImg.invalidate()
+        }
+
+        mDataBind.cover2local.setOnClickListener {
+            mDataBind.longImg.createFinalBitmap()?.let { it1 ->
+//                mDataBind.finalImg.setImageBitmap(it1)
+                BitmapUtilKt.cover2Local(it1, this, BitmapUtilKt.SUFFIX_PNG)
+            }
+        }
     }
 
     override fun onDestroy() {

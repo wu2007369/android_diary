@@ -346,6 +346,15 @@
                 app:layout_constraintTop_toBottomOf="@id/text_tpdraftadapter_del"
                 app:layout_constraintLeft_toRightOf="@id/shapeableImageview"
                 />
+
+            <ImageView
+                android:id="@+id/colorDrawable"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/shapeableImageview"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

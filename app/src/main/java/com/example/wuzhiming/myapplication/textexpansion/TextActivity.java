@@ -2,18 +2,18 @@ package com.example.wuzhiming.myapplication.textexpansion;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcel;
 import android.text.Editable;
 import android.text.Html;
 import android.text.SpannableString;
@@ -34,16 +34,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.wuzhiming.myapplication.R;
 import com.example.wuzhiming.myapplication.utils.DpPxExchange;
-import com.example.wuzhiming.myapplication.utils.PhoneUtils;
-import com.example.wuzhiming.myapplication.utils.ScreenUtils;
 
 public class TextActivity extends AppCompatActivity {
 
@@ -205,6 +205,13 @@ public class TextActivity extends AppCompatActivity {
             Log.e("lenth=","edit2.length()="+edit2.length()+";tempEdit.length()="+tempEdit.length());
             edit2.getText().delete(edit2.length()-tempEdit.length(),edit2.length());
         });
+
+
+        ImageView colorImage = findViewById(R.id.colorDrawable);
+        Glide.with(this).load(R.drawable.bg).into(colorImage);
+
+//        colorImage.setImageDrawable(null);
+        colorImage.setImageDrawable(new ColorDrawable(ContextCompat.getColor(this,R.color.black)));
 
     }
 

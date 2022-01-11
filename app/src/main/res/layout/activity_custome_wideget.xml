@@ -7,122 +7,167 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".CustomeWidegetActivity">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/circleBg"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="match_parent"
+            tools:context=".CustomeWidegetActivity">
 
-            >
-
-            <com.example.wuzhiming.myapplication.wideget.Circle
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintTop_toTopOf="parent"
+            <LinearLayout
+                android:id="@+id/circleBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="5dp"
-                android:background="@color/black" />
-
-            <com.example.wuzhiming.myapplication.wideget.Circle
-                android:id="@+id/item2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
                 app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+                <com.example.wuzhiming.myapplication.wideget.Circle
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/black"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.example.wuzhiming.myapplication.wideget.Circle
+                    android:id="@+id/item2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.example.wuzhiming.myapplication.wideget.Circle
+                    android:id="@+id/item3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/color_FF6633"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.example.wuzhiming.myapplication.wideget.Circle
+                    android:id="@+id/item4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/color_1D81FF"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/radiusBg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/circleBg">
+
+                <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg"
+                    app:radius="15dp" />
+
+                <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg"
+                    app:radius="5dp" />
+
+                <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg"
+                    app:left_top_radius="15dp"
+                    app:right_bottom_radius="15dp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_round_corners_10_white"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg"
+                    app:left_top_radius="15dp"
+                    app:right_bottom_radius="15dp" />
+            </LinearLayout>
+
+            <!--        <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyCalendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/radiusBg"
+                        android:layout_marginTop="10dp"
+                        />-->
+
+            <com.example.wuzhiming.myapplication.wideget.CustomeCalendar
+                android:id="@+id/recyCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/radiusBg" />
+
+            <com.example.wuzhiming.myapplication.wideget.LongPictureView
+                android:id="@+id/longImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/recyCalendar" />
+
+            <Button
+                android:id="@+id/changeColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/longImg"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="5dp"
-                android:background="@color/colorAccent" />
-
-            <com.example.wuzhiming.myapplication.wideget.Circle
-                android:id="@+id/item3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="5dp"
-                android:background="@color/color_FF6633" />
-
-            <com.example.wuzhiming.myapplication.wideget.Circle
-                android:id="@+id/item4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="5dp"
-                android:background="@color/color_1D81FF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/radiusBg"
-            app:layout_constraintTop_toBottomOf="@id/circleBg"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
-            >
-
-            <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bg"
-                android:scaleType="centerCrop"
-                app:radius="15dp"
+                android:text="改变颜色"
+                />
+            <Button
+                android:id="@+id/changeSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/longImg"
+                app:layout_constraintLeft_toRightOf="@id/changeColor"
+                android:text="改变大小"
                 />
 
-            <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bg"
-                android:scaleType="centerCrop"
-                app:radius="5dp"
-                android:layout_marginLeft="10dp"
+            <Button
+                android:id="@+id/cover2local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/longImg"
+                app:layout_constraintLeft_toRightOf="@id/changeSize"
+                android:text="导出带水印图片到相册"
                 />
-
-            <com.example.wuzhiming.myapplication.wideget.CustomRoundAngleImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bg"
-                android:scaleType="centerCrop"
-                android:layout_marginLeft="10dp"
-                app:left_top_radius="15dp"
-                app:right_bottom_radius="15dp"
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/longImg"
+                app:layout_constraintLeft_toRightOf="@id/cover2local"
+                android:text="清除文字"
                 />
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bg"
-                android:scaleType="centerCrop"
-                android:layout_marginLeft="10dp"
-                app:left_top_radius="15dp"
-                app:right_bottom_radius="15dp"
-                android:background="@drawable/shape_round_corners_10_white"
-                />
-        </LinearLayout>
+                android:id="@+id/finalImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/cover2local" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyCalendar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/radiusBg"
-            android:layout_marginTop="10dp"
-            />-->
+    </androidx.core.widget.NestedScrollView>
 
-        <com.example.wuzhiming.myapplication.wideget.CustomeCalendar
-            android:id="@+id/recyCalendar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/radiusBg"
-            android:layout_marginTop="10dp"
-            />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

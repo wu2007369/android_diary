@@ -3,6 +3,7 @@ package com.example.wuzhiming.myapplication.itext
 import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
+import android.util.Log
 import com.itextpdf.io.font.PdfEncodings
 import com.itextpdf.io.font.constants.StandardFonts
 import com.itextpdf.io.image.ImageDataFactory
@@ -23,6 +24,7 @@ import com.itextpdf.layout.element.Paragraph
 import com.itextpdf.layout.property.TextAlignment
 import com.itextpdf.layout.property.VerticalAlignment
 import java.io.*
+import java.lang.reflect.Field
 import java.util.*
 
 
@@ -42,6 +44,14 @@ object Itext7Utils {
     @Throws(IOException::class)
      fun pdfSplitter(fileName: String, pageNum: Int, desDir: String) {
         val pdfReader = PdfReader(fileName)
+
+        //处理加密和密码
+        pdfReader.setUnethicalReading(true)
+        val f2: Field = pdfReader.javaClass.getDeclaredField("encrypted")
+        f2.isAccessible = true
+        f2[pdfReader] = false
+
+
         val pdf = PdfDocument(pdfReader)
         var name: String
         var pdfWriter: PdfWriter? = null
@@ -116,7 +126,6 @@ object Itext7Utils {
                 font = PdfFontFactory.createFont("STSong-Light", "UniGB-UCS2-H", true)
 //                font = PdfFontFactory.createFont("STSong-Light", PdfEncodings.IDENTITY_H, false)
 //                val font = PdfFontFactory.createFont("C:\\Users\\xx\\Desktop\\d\\songti.TTF", PdfEncodings.IDENTITY_H, false)
-
 //                                    font = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD); // 要显示中文水印的话，需要设置中文字体，这里可以动态判断
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -129,7 +138,46 @@ object Itext7Utils {
                 .setFontSize(60f)
                 .setFont(font)
                 .showTextAligned(Paragraph(watermarkText), 298f, 421f, pdfDoc.getPageNumber(page),
+                    TextAlignment.CENTER, VerticalAlignment.MIDDLE, 45f)
+            Canvas(canvas, pdfDoc, page.pageSize).setFontColor(ColorConstants.LIGHT_GRAY)
+                .setFontSize(60f)
+                .setFont(font)
+                .showTextAligned(Paragraph(watermarkText), 298f, 421f, pdfDoc.getPageNumber(page),
                     TextAlignment.CENTER, VerticalAlignment.MIDDLE, 0f)
+        }
+        pdfDoc.close()
+    }
+
+    @Throws(FileNotFoundException::class, IOException::class)
+    fun addWatermark3(srcPdfPath: String?, destPdfPath: String?, watermarkText: String?) {
+        val pdfDoc = PdfDocument(PdfReader(srcPdfPath), PdfWriter(destPdfPath))
+        pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE) { event ->
+            val docEvent = event as PdfDocumentEvent
+            val pdfDoc = docEvent.document
+            val page = docEvent.page
+            val size=page.pageSize
+            Log.i("pdf","${size.width},${size.width}")
+
+            var font: PdfFont? = null
+            try {
+                font = PdfFontFactory.createFont("STSong-Light", "UniGB-UCS2-H", true)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            val canvas = PdfCanvas(page)
+            val gs1 = PdfExtGState()
+            gs1.setFillOpacity(1f) // 水印透明度
+            canvas.setExtGState(gs1)
+            for (i in 0 until  5){
+                for (j in 0 until 7){
+                    Canvas(canvas, pdfDoc, page.pageSize).setFontColor(ColorConstants.LIGHT_GRAY)
+                        .setFontSize(30f)
+                        .setFont(font)
+                        .showTextAligned(Paragraph(watermarkText), 98f+i*200, 21f+100*j, pdfDoc.getPageNumber(page),
+                            TextAlignment.CENTER, VerticalAlignment.MIDDLE, 120f)
+                }
+            }
+
         }
         pdfDoc.close()
     }

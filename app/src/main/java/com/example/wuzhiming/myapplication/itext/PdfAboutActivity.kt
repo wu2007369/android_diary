@@ -40,7 +40,7 @@ class PdfAboutActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.btn3).setOnClickListener {
 //            Itext7Utils.addWaterMark("/storage/emulated/0/缓存/1.pdf","/storage/emulated/0/缓存/11.pdf","漩涡鸣人")
-            Itext7Utils.addWatermark2("/storage/emulated/0/缓存/1.pdf","/storage/emulated/0/缓存/11.pdf","漩涡鸣人sf123")
+            Itext7Utils.addWatermark3("/storage/emulated/0/缓存/1.pdf","/storage/emulated/0/缓存/11.pdf","漩涡鸣人sf123")
         }
 
         findViewById<Button>(R.id.btn4).setOnClickListener {
