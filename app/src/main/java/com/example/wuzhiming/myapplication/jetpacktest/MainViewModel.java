@@ -43,6 +43,8 @@ public class MainViewModel extends /*ViewModel*/AndroidViewModel {
      */
     public void appendNumber(String number) {
         phoneInfo.setValue(phoneInfo.getValue() + number);
+        phoneInfo.setValue(phoneInfo.getValue() + number);
+        phoneInfo.setValue(phoneInfo.getValue() + number);
     }
 
     /**

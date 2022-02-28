@@ -333,6 +333,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 />
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageview2"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_margin="10dp"
@@ -347,12 +348,42 @@
                 app:layout_constraintLeft_toRightOf="@id/shapeableImageview"
                 />
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageview3"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/bg"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="20dp"
+                app:strokeColor="@color/color_1D81FF"
+                app:strokeWidth="4dp"
+                app:shapeAppearance="@style/CircleStyle"
+                app:layout_constraintTop_toBottomOf="@id/text_tpdraftadapter_del"
+                app:layout_constraintLeft_toRightOf="@id/shapeableImageview2"
+                />
+
             <ImageView
                 android:id="@+id/colorDrawable"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintTop_toBottomOf="@id/shapeableImageview"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageview4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/bg"
+                android:scaleType="fitXY"
+                android:padding="2dp"
+                app:strokeColor="@color/color_1D81FF"
+                app:strokeWidth="4dp"
+                app:shapeAppearance="@style/RoundStyle"
+                app:layout_constraintTop_toBottomOf="@id/colorDrawable"
                 app:layout_constraintLeft_toLeftOf="parent"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>

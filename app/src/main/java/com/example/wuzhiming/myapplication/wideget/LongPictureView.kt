@@ -193,7 +193,7 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
         canvas.rotate(30f)
     }
 
-    fun drawWaterMark4(canvas: Canvas, height: Int, width: Int) {
+    fun drawWaterMark3(canvas: Canvas, height: Int, width: Int) {
         if (waterMarkText.isNullOrEmpty()) {
             return
         }
@@ -231,6 +231,36 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
 /*                Log.i("csdcsdcsd",
                     "yPoint=${yPoint};deltY=${deltaY};xPoint=${xPoint};j.toFloat()=${j.toFloat()}")*/
             }
+        }
+    }
+
+    fun drawWaterMark4(canvas: Canvas, height: Int, width: Int) {
+        if (waterMarkText.isNullOrEmpty()) {
+            return
+        }
+        val ratio = sqrt(3.0)
+        val textWidth = mPaint.measureText(waterMarkText)
+        val spaceY = (textWidth / 1.7).toInt()
+        val spaceX = (textWidth * 1.5).toInt()
+        for (i in 100..height step spaceY) {
+            val deltaY = (i / ratio) % width
+            val yPoint = i.toFloat()
+            var xPoint = deltaY.toFloat()
+            while (xPoint < width) {
+                canvas.rotate(-30f, xPoint, yPoint)
+                canvas.drawText(waterMarkText, xPoint, yPoint, mPaint)
+                canvas.rotate(30f, xPoint, yPoint)
+                xPoint += spaceX
+            }
+            xPoint = (deltaY - spaceX).toFloat()
+            while (xPoint + textWidth > 0) {
+                canvas.rotate(-30f, xPoint, yPoint)
+                canvas.drawText(waterMarkText, xPoint, yPoint, mPaint)
+                canvas.rotate(30f, xPoint, yPoint)
+                xPoint -= spaceX
+            }
+/*                Log.i("csdcsdcsd",
+                    "yPoint=${yPoint};deltY=${deltaY};xPoint=${xPoint};j.toFloat()=${j.toFloat()}")*/
         }
     }
 

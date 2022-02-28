@@ -23,4 +23,8 @@
     <string name="phonexin">*</string>
     <string name="phonejin">#</string>
 
+
+    <string name="isTrue">isTrue</string>
+    <string name="isFalse">isFalse</string>
+
 </resources>
