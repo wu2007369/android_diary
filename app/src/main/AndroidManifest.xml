@@ -22,18 +22,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".thirdwidget.ThirdWidegetAct"></activity>
-        <activity android:name=".CustomeWidegetActivity" />
-        <activity android:name=".itext.PdfAboutActivity2" />
-        <activity android:name=".itext.PdfAboutActivity" />
-        <activity android:name=".WidegetAboutActivity" />
-        <activity android:name=".LoadingTestActivity" />
-        <activity android:name=".jetpacktest.NormalUseActivity" />
-        <activity android:name=".jetpacktest.JetPackTestActivity" />
         <activity
+            android:exported="false"
+            android:name=".thirdwidget.ThirdWidegetAct"></activity>
+        <activity
+            android:exported="false" android:name=".CustomeWidegetActivity" />
+        <activity
+            android:exported="false" android:name=".itext.PdfAboutActivity2" />
+        <activity
+            android:exported="false" android:name=".itext.PdfAboutActivity" />
+        <activity
+            android:exported="false" android:name=".WidegetAboutActivity" />
+        <activity
+            android:exported="false" android:name=".LoadingTestActivity" />
+        <activity
+            android:exported="false" android:name=".jetpacktest.NormalUseActivity" />
+        <activity
+            android:exported="false" android:name=".jetpacktest.JetPackTestActivity" />
+        <activity
+            android:exported="false"
             android:name=".recyexpansion.FlowActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".service.ServiceUseActivity" />
+        <activity
+            android:exported="false" android:name=".service.ServiceUseActivity" />
 
         <service
             android:name=".service.AIDLService"
@@ -47,62 +58,98 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".recyexpansion.DecorationTestActivity" />
-        <activity android:name=".recyexpansion.RecyItemClipActivity" />
-        <activity android:name=".coordinatorlayout.RecyDistanceListenerActivity" />
-        <activity android:name=".coordinatorlayout.PushNestedScrollUseActivity" />
-        <activity android:name=".DialogTestActivity" />
-        <activity android:name=".uieffect.ShadowActivity" />
-        <activity android:name=".uieffect.UiEffectActivity" />
-        <activity android:name=".coordinatorlayout.TitleGradientAnimateActivity" />
         <activity
+            android:exported="false" android:name=".recyexpansion.DecorationTestActivity" />
+        <activity
+            android:exported="false" android:name=".recyexpansion.RecyItemClipActivity" />
+        <activity
+            android:exported="false" android:name=".coordinatorlayout.RecyDistanceListenerActivity" />
+        <activity
+            android:exported="false" android:name=".coordinatorlayout.PushNestedScrollUseActivity" />
+        <activity
+            android:exported="false" android:name=".DialogTestActivity" />
+        <activity
+            android:exported="false" android:name=".uieffect.ShadowActivity" />
+        <activity
+            android:exported="false" android:name=".uieffect.UiEffectActivity" />
+        <activity
+            android:exported="false" android:name=".coordinatorlayout.TitleGradientAnimateActivity" />
+        <activity
+            android:exported="false"
             android:name=".textexpansion.TextActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".recyexpansion.suspension.WXReadDemoActivity" />
         <activity
+            android:exported="false" android:name=".recyexpansion.suspension.WXReadDemoActivity" />
+        <activity
+            android:exported="false"
             android:name=".immerse.ImmerseWebviewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".immerse.ImmerseActivity" />
-        <activity android:name=".intent.JumpActivity" />
-        <activity android:name=".intent.AliasActivity" />
+        <activity
+            android:exported="false" android:name=".immerse.ImmerseActivity" />
+        <activity
+            android:exported="false" android:name=".intent.JumpActivity" />
+        <activity
+            android:exported="false" android:name=".intent.AliasActivity" />
 
         <activity-alias
+            android:exported="false"
             android:name=".intent.JumpActivity"
             android:targetActivity=".intent.AliasActivity" />
 
-        <activity android:name=".intent.IntentActivity" />
-        <activity android:name=".shape.BottomLineActivity" />
-        <activity android:name=".shape.ShapeActivity" />
-        <activity android:name=".coordinatorlayout.HeaderAnimatorActivity" />
-        <activity android:name=".period.PeriodActivity" />
-        <activity android:name=".recyexpansion.diff.DiffActivity" />
-        <activity android:name=".recyexpansion.Main13Activity" />
-        <activity android:name=".customCamera.Main11Activity" />
-        <activity android:name=".customCamera.CameraActivity" />
-        <activity android:name=".customCamera.PhotoActivity" />
-        <activity android:name=".shape.DottedLineActivity" />
         <activity
+            android:exported="false" android:name=".intent.IntentActivity" />
+        <activity
+            android:exported="false" android:name=".shape.BottomLineActivity" />
+        <activity
+            android:exported="false" android:name=".shape.ShapeActivity" />
+        <activity
+            android:exported="false" android:name=".coordinatorlayout.HeaderAnimatorActivity" />
+        <activity
+            android:exported="false" android:name=".period.PeriodActivity" />
+        <activity
+            android:exported="false" android:name=".recyexpansion.diff.DiffActivity" />
+        <activity
+            android:exported="false" android:name=".recyexpansion.Main13Activity" />
+        <activity
+            android:exported="false" android:name=".customCamera.Main11Activity" />
+        <activity
+            android:exported="false" android:name=".customCamera.CameraActivity" />
+        <activity
+            android:exported="false" android:name=".customCamera.PhotoActivity" />
+        <activity
+            android:exported="false" android:name=".shape.DottedLineActivity" />
+        <activity
+            android:exported="false"
             android:name=".coordinatorlayout.Main9Activity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:exported="false"
             android:name=".coordinatorlayout.Main6Activity"
             android:theme="@style/noActionAndStausTransparent" />
-        <activity android:name=".coordinatorlayout.Main8Activity" />
-        <activity android:name=".Main7Activity" />
         <activity
+            android:exported="false" android:name=".coordinatorlayout.Main8Activity" />
+        <activity
+            android:exported="false" android:name=".Main7Activity" />
+        <activity
+            android:exported="false"
             android:name=".Main5Activity"
             android:theme="@style/dialogActivityTheme" />
-        <activity android:name=".immerse.Main4Activity" />
-        <activity android:name=".recyexpansion.Main3Activity" />
         <activity
+            android:exported="false" android:name=".immerse.Main4Activity" />
+        <activity
+            android:exported="false" android:name=".recyexpansion.Main3Activity" />
+        <activity
+            android:exported="false"
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:exported="false"
             android:name=".TranslucentActivity"
             android:theme="@android:style/Theme.Translucent" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:exported="true" android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
