@@ -47,4 +47,9 @@ class Circle(context: Context, attrs: AttributeSet?) : View(context, attrs) {
             canvas.drawCircle(width / 2f, height / 2f, width / 4f, paint)
         }
     }
+
+    fun setColor(color:Int){
+        paint.color=color
+        invalidate()
+    }
 }

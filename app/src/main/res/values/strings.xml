@@ -3,6 +3,7 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="html_value">[html标记语言(^[<b><font color="#FF4081">my html text</font></b>]]</string>
     <string name="html_value_and_placeholder">[html标记语言+占位符(^[<b><font color="#FF4081">%s</font></b>]]</string>
+    <string name="normal_value2_html">普通语言转html</string>
 
 
     <string name="phone">打电话</string>

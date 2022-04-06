@@ -47,13 +47,20 @@
                 android:text="@string/html_value"
                 app:layout_constraintTop_toBottomOf="@id/html_text3" />
 
+            <TextView
+                android:id="@+id/html_text5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/normal_value2_html"
+                app:layout_constraintTop_toBottomOf="@id/html_text4" />
+
             <EditText
                 android:id="@+id/edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:hint="测试下 右边倒序输入"
-                app:layout_constraintTop_toBottomOf="@id/html_text4" />
+                app:layout_constraintTop_toBottomOf="@id/html_text5" />
 
             <Switch
                 android:id="@+id/switch1"

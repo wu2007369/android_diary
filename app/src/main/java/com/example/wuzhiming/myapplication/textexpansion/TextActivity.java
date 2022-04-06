@@ -108,6 +108,9 @@ public class TextActivity extends AppCompatActivity {
         text3.setHighlightColor(getResources().getColor(android.R.color.transparent));//不设置会有背景色
         text3.setText(spannableBuilder);
 
+        TextView text4 = findViewById(R.id.html_text5);
+        String content=getString(R.string.normal_value2_html);
+        text4.setText(Html.toHtml(new SpannableString(content)));
 
         Switch switchBtn = (Switch) findViewById(R.id.switch1);
         switchBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

@@ -87,4 +87,7 @@ dependencies {
 //    implementation group: 'com.github.itext.itext7', name: 'svg', version: '7.2.0'
 //    implementation group: 'com.github.itext.itext7', name: 'sign', version: '7.2.0'
 
+    implementation "com.tencent.tbs.tbssdk:sdk:43939"
+
+
 }

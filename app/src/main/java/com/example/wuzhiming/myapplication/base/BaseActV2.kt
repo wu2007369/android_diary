@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 /**
  * @Author:         wuzm
@@ -29,4 +32,33 @@ abstract class BaseActV2 <T : ViewDataBinding> : AppCompatActivity(){
 
         super.onDestroy()
     }
+
+
+    private val exceptionHandler = CoroutineExceptionHandlerImpl{context, exception, errCode ->
+        coroutineError(context, exception, errCode)
+    }
+
+    open fun coroutineError(context: CoroutineContext, throwable: Throwable, errCode: Int){}
+
+    /**
+     *延迟任务
+     */
+    fun processDelay(delayTime: Long, errCode: Int = 0, block: suspend CoroutineScope.() -> Unit){
+        exceptionHandler.errCode = errCode
+        lifecycleScope.launch(exceptionHandler) {
+            withContext(Dispatchers.IO) { delay(delayTime) }
+            block.invoke(this)
+        }
+    }
+
+    /**
+     * 切换到主线程
+     */
+    fun processMain(errCode: Int = 0, block: suspend CoroutineScope.() -> Unit){
+        exceptionHandler.errCode = errCode
+        lifecycleScope.launch(exceptionHandler) {
+            block.invoke(this)
+        }
+    }
+
 }

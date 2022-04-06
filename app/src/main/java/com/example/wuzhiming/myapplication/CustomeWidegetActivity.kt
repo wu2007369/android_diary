@@ -23,6 +23,7 @@ class CustomeWidegetActivity : AppCompatActivity() {
 
         mDataBind.item3.setOnClickListener { v -> v.isSelected = true }
         mDataBind.item4.setOnClickListener { v -> v.isSelected = !v.isSelected }
+        mDataBind.item5.setOnClickListener { v -> mDataBind.item5.setColor(getColor(R.color.color_1D81FF)) }
 
         /*    val adapter = CalendarListAdapter(getAllDay(7), this)
 
@@ -30,7 +31,9 @@ class CustomeWidegetActivity : AppCompatActivity() {
             val mPagerSnapHelper = PagerSnapHelper()
             mPagerSnapHelper.attachToRecyclerView(mDataBind.recyCalendar)
             mDataBind.recyCalendar.adapter = adapter*/
-        mDataBind.longImg.test()
+        //open or close
+//        mDataBind.longImg.test()
+
         mDataBind.changeColor.setOnClickListener {
             mDataBind.longImg.mPaint.color = ContextCompat.getColor(this, R.color.color_FF6633)
             mDataBind.longImg.paintTextSize = ScreenUtils.dp2px(this, 25f).toFloat()
