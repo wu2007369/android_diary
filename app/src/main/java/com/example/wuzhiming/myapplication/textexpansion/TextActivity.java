@@ -44,6 +44,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.wuzhiming.myapplication.R;
 import com.example.wuzhiming.myapplication.utils.DpPxExchange;
+import com.google.android.material.imageview.ShapeableImageView;
 
 public class TextActivity extends AppCompatActivity {
 
@@ -216,6 +217,12 @@ public class TextActivity extends AppCompatActivity {
 //        colorImage.setImageDrawable(null);
         colorImage.setImageDrawable(new ColorDrawable(ContextCompat.getColor(this,R.color.black)));
 
+
+
+
+        ShapeableImageView shapeableImage = findViewById(R.id.shapeableImageview5);
+        shapeableImage.setStrokeColorResource(R.color.black);
+        shapeableImage.setStrokeWidth(3);
     }
 
     private void setHeader() {

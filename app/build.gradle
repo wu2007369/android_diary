@@ -76,6 +76,9 @@ dependencies {
     implementation "com.github.itext.itext7:kernel:7.2.0"
     implementation "com.github.itext.itext7:layout:7.2.0"
     implementation "com.github.itext.itext7:font-asian:7.2.0"
+    implementation "org.bouncycastle:bcprov-jdk15on:1.47"
+    implementation "org.bouncycastle:bcpkix-jdk15on:1.47"
+
 /*    implementation group: 'com.github.itext.itext7', name: 'kernel', version: '7.2.0'
     implementation group: 'com.github.itext.itext7', name: 'layout', version: '7.2.0'
     implementation group: 'com.github.itext.itext7', name: 'font-asian', version: '7.2.0'*/

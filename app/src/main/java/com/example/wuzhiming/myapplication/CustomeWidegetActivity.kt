@@ -31,9 +31,11 @@ class CustomeWidegetActivity : AppCompatActivity() {
             val mPagerSnapHelper = PagerSnapHelper()
             mPagerSnapHelper.attachToRecyclerView(mDataBind.recyCalendar)
             mDataBind.recyCalendar.adapter = adapter*/
-        //open or close
-//        mDataBind.longImg.test()
 
+
+
+        //open or close
+        mDataBind.longImg.test()
         mDataBind.changeColor.setOnClickListener {
             mDataBind.longImg.mPaint.color = ContextCompat.getColor(this, R.color.color_FF6633)
             mDataBind.longImg.paintTextSize = ScreenUtils.dp2px(this, 25f).toFloat()
@@ -59,6 +61,12 @@ class CustomeWidegetActivity : AppCompatActivity() {
 //                mDataBind.finalImg.setImageBitmap(it1)
                 BitmapUtilKt.cover2Local(it1, this, BitmapUtilKt.SUFFIX_PNG)
             }
+        }
+
+        mDataBind.drawSeal.setOnClickListener {
+            mDataBind.longImg.sealText="scjilsdjcilosdjloclsd"
+            mDataBind.longImg.invalidate()
+
         }
     }
 

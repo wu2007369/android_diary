@@ -50,4 +50,22 @@
         app:layout_constraintTop_toBottomOf="@id/btn4"
         />
 
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="itext7 pdf解密"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn5"
+        />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="itext5 pdf解密"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn6"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

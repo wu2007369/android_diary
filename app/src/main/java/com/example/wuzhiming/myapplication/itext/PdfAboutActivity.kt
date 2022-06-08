@@ -1,11 +1,10 @@
 package com.example.wuzhiming.myapplication.itext
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wuzhiming.myapplication.R
+import com.example.wuzhiming.myapplication.itext.Itext7UnEncriptUtil.fun3
 
 
 class PdfAboutActivity : AppCompatActivity() {
@@ -36,20 +35,36 @@ class PdfAboutActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn2).setOnClickListener {
-            Itext7Utils.pdfSplitter("/storage/emulated/0/缓存/南京功夫豆企业介绍.pdf",20)
+            Itext7Utils.pdfSplitter("/storage/emulated/0/缓存/南京功夫豆企业介绍.pdf", 20)
         }
         findViewById<Button>(R.id.btn3).setOnClickListener {
 //            Itext7Utils.addWaterMark("/storage/emulated/0/缓存/1.pdf","/storage/emulated/0/缓存/11.pdf","漩涡鸣人")
-            Itext7Utils.addWatermark3("/storage/emulated/0/缓存/1.pdf","/storage/emulated/0/缓存/11.pdf","漩涡鸣人sf123")
+            Itext7Utils.addWatermark3("/storage/emulated/0/缓存/1.pdf",
+                "/storage/emulated/0/缓存/11.pdf", "漩涡鸣人sf123")
         }
 
         findViewById<Button>(R.id.btn4).setOnClickListener {
-            Itext7Utils.createImgPdf("/storage/emulated/0/缓存/12.pdf","/storage/emulated/0/缓存/A.jpg" )
+            Itext7Utils.createImgPdf("/storage/emulated/0/缓存/12.pdf",
+                "/storage/emulated/0/缓存/A.jpg")
         }
 
         findViewById<Button>(R.id.btn5).setOnClickListener {
-            Itext7Utils.pdf2Img("/storage/emulated/0/缓存/12.pdf","/storage/emulated/0/缓存/" )
+            Itext7Utils.pdf2Img("/storage/emulated/0/缓存/12.pdf", "/storage/emulated/0/缓存/")
         }
+
+        findViewById<Button>(R.id.btn6).setOnClickListener {
+            Itext7UnEncriptUtil.fun3("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111");
+//            UnProtectedPDFUtil.unProtected(Files.readAllBytes(Paths.get("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")));
+        }
+        findViewById<Button>(R.id.btn7).setOnClickListener {
+//            Itext5UnEncriptUtil.fun2("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")
+//            Itext5UnEncriptUtil.fun2("/storage/emulated/0/缓存/南京功夫豆企业介绍.pdf")
+//            Itext5UnEncriptUtil.fun3("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111")
+            ItextUtils.checkPdfEncrypted("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")
+            ItextUtils.checkPdfEncrypted("/storage/emulated/0/缓存/南京功夫豆企业介绍.pdf")
+            ItextUtils.UnEncryptPdf2NewFile("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111")
+        }
+
 
     }
 }

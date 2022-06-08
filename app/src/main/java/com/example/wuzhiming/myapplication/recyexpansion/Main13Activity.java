@@ -45,6 +45,10 @@ public class Main13Activity extends AppCompatActivity {
             startActivity(new Intent(this, DecorationTestActivity.class));
         });
 
+        findViewById(R.id.btn_item_snaphlper).setOnClickListener(v->{
+            startActivity(new Intent(this, DecorationTestActivity.class));
+        });
+
 
     }
 }

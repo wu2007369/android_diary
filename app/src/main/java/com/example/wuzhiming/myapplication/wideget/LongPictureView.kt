@@ -5,10 +5,7 @@ import android.graphics.*
 import android.net.Uri
 import android.text.TextUtils
 import android.util.AttributeSet
-import com.example.wuzhiming.myapplication.utils.BitmapUtil
-import com.example.wuzhiming.myapplication.utils.ImageHelper
-import com.example.wuzhiming.myapplication.utils.OSUtils
-import com.example.wuzhiming.myapplication.utils.ScreenUtils
+import com.example.wuzhiming.myapplication.utils.*
 import java.io.File
 import kotlin.math.abs
 import kotlin.math.sqrt
@@ -24,6 +21,9 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
         const val DEFAULT_PAINT_TEXT_DP_SIZE = 15f
         const val DEFAULT_PAINT_TEXT_STROKE_WIDTH = 5f
     }
+
+    var sealText: String?=null
+    var sealTimeText: String?=null
 
     var mPaint: Paint
     var imageUrls: MutableList<String> = mutableListOf()
@@ -59,6 +59,9 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
         imageUrls.add("/storage/emulated/0/缓存/files/IMG_20211223_145315.jpg")
         imageUrls.add("/storage/emulated/0/缓存/files/A.jpg")
         imageUrls.add("/storage/emulated/0/缓存/files/IMG_20211118_210235.jpg")
+
+        sealText="你大爷的"
+        sealTimeText="略略略"
         refreshView()
     }
 
@@ -94,6 +97,8 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
             //绘制水印
             drawWaterMarkOnView(canvas)
         }
+
+        drawSeal(canvas)
 
     }
 
@@ -388,4 +393,51 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
         //绘制大bitmap
         return drawLongBitmapAndWaterMark(sortedBitmaps)
     }
+
+    //画个印章
+    fun drawSeal(canvas: Canvas) {
+        if (sealText.isNullOrEmpty()) {
+            return
+        }
+        val paint = Paint()
+        //指定是否使用抗锯齿功能，如果使用，会使绘图速度变慢
+        paint.isAntiAlias = true
+        //绘图样式，对于设文字和几何图形都有效
+        paint.style = Paint.Style.STROKE
+        //设置文字对齐方式，取值：align.CENTER、align.LEFT或align.RIGHT
+        paint.textAlign = Paint.Align.CENTER
+        paint.strokeWidth = DisplayUtil.dip2px(1f)
+        paint.color = Color.RED
+        paint.textSize = DisplayUtil.dip2px(12f)
+
+        val start=50f
+        val top=50f
+        val interval=20
+
+        val rect1 = Rect()
+        val rect2 = Rect()
+        paint.getTextBounds(sealText, 0, sealText?.length ?: 0, rect1)
+        if (!sealTimeText.isNullOrEmpty()){
+            paint.getTextBounds(sealText, 0, sealText?.length ?: 0, rect2)
+        }
+        val rectWidth = rect1.width().coerceAtLeast(rect2.width())
+        var reactHeight =
+            rect1.height()+rect2.height()+interval*2
+
+
+        canvas.rotate(30f)
+        paint.style = Paint.Style.FILL
+        paint.strokeWidth = DisplayUtil.dip2px(15f)
+        canvas.drawText(sealText!!,(rectWidth+start*2+interval*2)/2,(rect1.height()*0.75+top+interval).toFloat(),paint)
+        if (!sealTimeText.isNullOrEmpty()){
+            reactHeight+=interval
+            canvas.drawText(sealTimeText!!,(rectWidth+start*2+interval*2)/2,((reactHeight)*0.75+top).toFloat(),paint)
+        }
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = DisplayUtil.dip2px(1f)
+        canvas.drawRect( RectF(start,top,rectWidth+start+interval*2,top+reactHeight),paint)
+        canvas.rotate(-30f)
+
+    }
+
 }
