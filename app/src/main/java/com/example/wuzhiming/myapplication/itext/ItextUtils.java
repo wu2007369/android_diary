@@ -7,21 +7,28 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfWriter;*/
 
+import android.util.Log;
+
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.exceptions.BadPasswordException;
 import com.itextpdf.text.pdf.PdfImportedPage;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfSmartCopy;
+import com.itextpdf.text.pdf.PdfStamper;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.tom_roush.pdfbox.pdmodel.PDDocument;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class ItextUtils {
-/*    *//**
+    /*    */
+
+    /**
      * 将filename pdf文件切分成多个 自定义页数大小的 pdf文件
      *
      * @param filename      pdf文件路径 "/storage/emulated/0/缓存/南京功夫豆企业介绍.pdf"
@@ -72,25 +79,23 @@ public class ItextUtils {
     public static int splitPdf(String filename, int splitSize,ItextCallBack itextCallBack) {
         return splitPdf(filename, splitSize, filename.substring(0, filename.length() - 4),itextCallBack);
     }*/
-
-
-    public static Boolean checkPdfEncrypted(String filePath){
+    public static Boolean checkPdfEncrypted(String filePath) {
         try {
             PdfReader pdfReader = new PdfReader(filePath);
             return pdfReader.isEncrypted();
-        }catch (BadPasswordException e){
+        } catch (BadPasswordException e) {
             return true;
-        }catch (IOException ioException){
+        } catch (IOException ioException) {
             return true;
         }
     }
 
     //解密输出到新pdf文件
-    public static void UnEncryptPdf2NewFile(String source,String destFilePath, String password) {
-        PdfReader pdfReader=null;
-        PdfSmartCopy copy=null;
-        FileOutputStream outStream=null;
-        try{
+    public static void UnEncryptPdf2NewFile(String source, String destFilePath, String password) {
+        PdfReader pdfReader = null;
+        PdfSmartCopy copy = null;
+        FileOutputStream outStream = null;
+        try {
             pdfReader = new PdfReader(source, password.getBytes(StandardCharsets.UTF_8));
             Rectangle pageSize = pdfReader.getPageSize(1);
             int numberOfPages = pdfReader.getNumberOfPages();
@@ -99,7 +104,7 @@ public class ItextUtils {
             PdfWriter pdfWriter = PdfWriter.getInstance(pdfDocument, new FileOutputStream(destFilePath));
             copy = new PdfSmartCopy(pdfDocument, outStream);
             pdfDocument.open();
-            for (int i=1;i<=numberOfPages; i++) {
+            for (int i = 1; i <= numberOfPages; i++) {
                 pdfDocument.newPage();
                 PdfImportedPage imported = copy.getImportedPage(pdfReader, i);
                 copy.addPage(imported);
@@ -107,16 +112,49 @@ public class ItextUtils {
             pdfReader.close();
             copy.close();
             outStream.close();
-        }catch (IOException ioException){
-        }catch (Exception e){
-        }finally {
-            if (pdfReader!=null){
+        } catch (IOException ioException) {
+        } catch (Exception e) {
+        } finally {
+            if (pdfReader != null) {
                 pdfReader.close();
             }
-            if (copy!=null){
+            if (copy != null) {
                 copy.close();
             }
         }
 //        pdfDocument.close()
+    }
+
+
+    //解密输出到新pdf文件
+    public static void UnEncryptPdf2NewFileV2(String source, String destFilePath, String password) {
+        PdfReader pdfReader = null;
+        try {
+            pdfReader = new PdfReader(source, password.getBytes(StandardCharsets.UTF_8));
+            PdfStamper stamp = new PdfStamper(pdfReader, new FileOutputStream(destFilePath));
+            stamp.setEncryption(null, null, PdfWriter.ALLOW_SCREENREADERS, PdfWriter.STANDARD_ENCRYPTION_128);
+            // 关闭
+            stamp.close();
+        } catch (Exception e) {
+//            Log.i("csdsd",e.getMessage());
+        }
+    }
+
+    /**
+     * 解除保护
+     *
+     * @param filepath 文件路径
+     * @param filepath password 密码
+     */
+    public static void unPdfEncrypt(String filepath, String password) {
+        try {
+            File file = new File(filepath);
+            PDDocument document = PDDocument.load(file, password);
+            document.setAllSecurityToBeRemoved(true);
+            document.save(filepath);
+            document.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

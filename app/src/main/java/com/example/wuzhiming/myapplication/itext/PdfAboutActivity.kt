@@ -1,6 +1,7 @@
 package com.example.wuzhiming.myapplication.itext
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wuzhiming.myapplication.R
@@ -53,7 +54,8 @@ class PdfAboutActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn6).setOnClickListener {
-            Itext7UnEncriptUtil.fun3("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111");
+            Itext7UnEncriptUtil.fun3("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf",
+                "/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf", "111111");
 //            UnProtectedPDFUtil.unProtected(Files.readAllBytes(Paths.get("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")));
         }
         findViewById<Button>(R.id.btn7).setOnClickListener {
@@ -62,8 +64,21 @@ class PdfAboutActivity : AppCompatActivity() {
 //            Itext5UnEncriptUtil.fun3("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111")
             ItextUtils.checkPdfEncrypted("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")
             ItextUtils.checkPdfEncrypted("/storage/emulated/0/缓存/南京功夫豆企业介绍.pdf")
-            ItextUtils.UnEncryptPdf2NewFile("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111")
+//            ItextUtils.UnEncryptPdf2NewFile("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf","/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf","111111")
+            ItextUtils.UnEncryptPdf2NewFileV2("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf",
+                "/storage/emulated/0/缓存/南京功夫豆企业介绍解密.pdf", "111111")
         }
+
+        findViewById<Button>(R.id.btn8).setOnClickListener {
+            var isEncrypted=PdfBoxUtils.isEncrypted("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")
+            Log.i("isEncrypted","isEncrypted:"+isEncrypted)
+//            PdfBoxUtils.unPdfEncrypt("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf", "111111")
+            ItextUtils.unPdfEncrypt("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf", "111111")
+
+            isEncrypted=PdfBoxUtils.isEncrypted("/storage/emulated/0/缓存/南京功夫豆企业介绍加密111111.pdf")
+            Log.i("isEncrypted","isEncrypted:"+isEncrypted)
+        }
+
 
 
     }
