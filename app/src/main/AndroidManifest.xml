@@ -115,6 +115,8 @@
         <activity
             android:exported="false" android:name=".recyexpansion.Main13Activity" />
         <activity
+            android:exported="false" android:name=".recyexpansion.RecySnapAct" />
+        <activity
             android:exported="false" android:name=".customCamera.Main11Activity" />
         <activity
             android:exported="false" android:name=".customCamera.CameraActivity" />

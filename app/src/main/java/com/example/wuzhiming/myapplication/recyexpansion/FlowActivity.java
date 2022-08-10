@@ -2,7 +2,6 @@ package com.example.wuzhiming.myapplication.recyexpansion;
 
 import androidx.annotation.IntRange;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,10 +14,8 @@ import com.beloo.widget.chipslayoutmanager.SpacingItemDecoration;
 import com.beloo.widget.chipslayoutmanager.gravity.IChildGravityResolver;
 import com.beloo.widget.chipslayoutmanager.layouter.breaker.IRowBreaker;
 import com.example.wuzhiming.myapplication.R;
-import com.example.wuzhiming.myapplication.adapter.MatchItemAdapter;
 import com.example.wuzhiming.myapplication.adapter.TextItemAdapter;
 import com.example.wuzhiming.myapplication.utils.DpPxExchange;
-import com.example.wuzhiming.myapplication.wideget.FlowLayoutManager;
 
 import java.util.Arrays;
 

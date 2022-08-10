@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication.adapter;
+package com.example.wuzhiming.myapplication.recyexpansion.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wuzhiming.myapplication.R;
+import com.example.wuzhiming.myapplication.recyexpansion.adapter.MatchItemAdapter;
 
 import java.util.List;
 

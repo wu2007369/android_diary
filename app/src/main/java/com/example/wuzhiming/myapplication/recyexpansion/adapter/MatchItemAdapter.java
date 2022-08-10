@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication.adapter;
+package com.example.wuzhiming.myapplication.recyexpansion.adapter;
 
 import android.content.Context;
 import androidx.annotation.NonNull;

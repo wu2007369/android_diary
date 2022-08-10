@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.wuzhiming.myapplication.R;
-import com.example.wuzhiming.myapplication.adapter.ItemClipAdapter;
+import com.example.wuzhiming.myapplication.recyexpansion.adapter.ItemClipAdapter;
 
 import java.util.Arrays;
 

@@ -406,6 +406,13 @@
                 app:layout_constraintTop_toBottomOf="@id/colorDrawable"
                 app:layout_constraintLeft_toRightOf="@id/shapeableImageview4"
                 />
+            <EditText
+                android:id="@+id/editCustomeChoosePop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试自定义选择栏"
+                app:layout_constraintTop_toBottomOf="@id/shapeableImageview5"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

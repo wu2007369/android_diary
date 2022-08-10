@@ -46,7 +46,7 @@ public class Main13Activity extends AppCompatActivity {
         });
 
         findViewById(R.id.btn_item_snaphlper).setOnClickListener(v->{
-            startActivity(new Intent(this, DecorationTestActivity.class));
+            startActivity(new Intent(this, RecySnapAct.class));
         });
 
 

@@ -45,7 +45,7 @@ public class TextItemAdapter extends RecyclerView.Adapter {
         return mdata.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    protected static class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView btn;
         public ViewHolder(@NonNull View itemView) {

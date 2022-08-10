@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wuzhiming.myapplication.R;
-import com.example.wuzhiming.myapplication.adapter.MatchItemAdapter;
+import com.example.wuzhiming.myapplication.recyexpansion.adapter.MatchItemAdapter;
 
 import java.util.Arrays;
 
