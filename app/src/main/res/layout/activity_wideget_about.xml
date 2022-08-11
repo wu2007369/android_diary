@@ -50,6 +50,24 @@
         android:endYear="2021"
         />
 
+    <com.example.wuzhiming.myapplication.wideget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="center"
+        app:tabIndicator="@drawable/layer_tab_indicator"
+        app:tabRippleColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/datePicker"
+        >
+<!--        app:tabBackground="@android:color/transparent"-->
+<!--        app:tabIndicatorColor="@color/black"-->
+<!--        app:tabIndicator="@drawable/base_icon_tab_select_straight"-->
+<!--        app:tabIndicator="@drawable/layer_tab_indicator"-->
+
+    </com.example.wuzhiming.myapplication.wideget.TabLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

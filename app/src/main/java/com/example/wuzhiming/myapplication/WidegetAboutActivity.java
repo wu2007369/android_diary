@@ -8,15 +8,14 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.wuzhiming.myapplication.adapter.NumericWheelAdapter;
 import com.example.wuzhiming.myapplication.databinding.ActivityWidegetAboutBinding;
 import com.example.wuzhiming.myapplication.interfa.OnWheelChangedListener;
 import com.example.wuzhiming.myapplication.interfa.WheelAdapter;
+import com.example.wuzhiming.myapplication.wideget.TabLayout;
 import com.example.wuzhiming.myapplication.wideget.WheelView;
 
 import java.util.Calendar;
@@ -85,6 +84,39 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
         shwoWheelView();
 
         hideDaySpiner(binding.datePicker);
+
+
+        showTabLayout();
+    }
+
+    private void showTabLayout() {
+        String mTitles[] = {
+                "上海", "头条推荐", "生活", "娱乐八卦", "体育",
+                "段子", "美食", "电影", "科技", "搞笑",
+                "社会", "财经", "时尚", "汽车", "军事",
+                "小说", "育儿", "职场", "萌宠", "游戏",
+                "健康", "动漫", "互联网"};
+
+        //TabLayout的基本使用
+        binding.tablayout.noTint=true;
+        for(int i=0;i<8;i++){
+            TabLayout.Tab tab = binding.tablayout.newTab();
+            tab.setTag(i);
+            tab.setText(mTitles[i]);
+            binding.tablayout.addTab(tab);
+        }
+/*        try {
+            Field field1 = binding.tablayout.getClass().getDeclaredField("slidingTabIndicator");
+            field1.setAccessible(true);
+            field1.get(binding.tablayout);
+
+            Field field2 =Class.forName("com.google.android.material.tabs.TabLayout$SlidingTabIndicator").getDeclaredField("selectedIndicatorPaint");
+            field2.setAccessible(true);
+            field2.set(field1, null);
+        }catch (Exception e){
+            Log.e("test",e.getMessage());
+        }*/
+//        binding.tablayout.setSelectedTabIndicator(getDrawable(R.drawable.layer_tab_indicator));
     }
 
     private void hideDaySpiner(DatePicker datePicker) {
