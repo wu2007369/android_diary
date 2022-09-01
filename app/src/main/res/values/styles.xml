@@ -101,6 +101,19 @@
         <item name="cornerSizeBottomLeft">8dp</item>-->
     </style>
 
+
+    <style name="TabLayoutTextSelected">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="TabLayoutTextUnSelected">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <declare-styleable name="CornersTextView" tools:ignore="ResourceName">
         <attr name="ctv_solidColor" format="color" />
         <attr name="ctv_radius" format="dimension" />

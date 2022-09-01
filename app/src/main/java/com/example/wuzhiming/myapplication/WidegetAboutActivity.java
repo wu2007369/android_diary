@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.DatePickerDialog;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wuzhiming.myapplication.databinding.ActivityWidegetAboutBinding;
@@ -87,6 +90,10 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
 
         showTabLayout();
+        showTabLayout2();//填充满与滚动的区别
+        showTabLayout3();//indicator长短区别
+        showTabLayout4();//设置tabIndicator 无区别
+        showTabLayout5();//写死drawable长度，则indicator长短可控
     }
 
     private void showTabLayout() {
@@ -99,12 +106,47 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
         //TabLayout的基本使用
         binding.tablayout.noTint=true;
+
+
+        binding.tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                TextView textView = new TextView(WidegetAboutActivity.this);
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,17);
+                textView.setTextColor(getResources().getColor(R.color.color_FF6633));
+                textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                textView.setText(tab.getText());
+                tab.setCustomView(textView);
+/*
+  无效
+  text.setTextColor(ContextCompat.getColor(WidegetAboutActivity.this, R.color.color_FF6633));
+                text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f);
+                text.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));*/
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                tab.setCustomView(null);
+/*
+                无效
+                text.setTextColor(ContextCompat.getColor(WidegetAboutActivity.this, R.color.black));
+                text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f);
+                text.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));*/
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         for(int i=0;i<8;i++){
             TabLayout.Tab tab = binding.tablayout.newTab();
             tab.setTag(i);
             tab.setText(mTitles[i]);
             binding.tablayout.addTab(tab);
         }
+
 /*        try {
             Field field1 = binding.tablayout.getClass().getDeclaredField("slidingTabIndicator");
             field1.setAccessible(true);
@@ -117,6 +159,35 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
             Log.e("test",e.getMessage());
         }*/
 //        binding.tablayout.setSelectedTabIndicator(getDrawable(R.drawable.layer_tab_indicator));
+    }
+
+
+    private void showTabLayout2() {
+        setTabData(binding.tablayout2);
+    }
+
+    private void showTabLayout3() {
+        setTabData(binding.tablayout3);
+    }
+
+    private void showTabLayout4() {
+        setTabData(binding.tablayout4);
+    }
+    private void showTabLayout5() {
+        setTabData(binding.tablayout5);
+    }
+
+    private void setTabData(TabLayout tablayout){
+        String mTitles[] = {
+                "上海", "头条推荐"};
+        //TabLayout的基本使用
+        tablayout.noTint=true;
+        for(int i=0;i<2;i++){
+            TabLayout.Tab tab = tablayout.newTab();
+            tab.setTag(i);
+            tab.setText(mTitles[i]);
+            tablayout.addTab(tab);
+        }
     }
 
     private void hideDaySpiner(DatePicker datePicker) {
