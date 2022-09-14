@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication.dialog;
+package com.example.wuzhiming.myapplication.dialog.base;
 
 import android.app.Dialog;
 import android.content.Context;

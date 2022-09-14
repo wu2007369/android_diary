@@ -93,7 +93,8 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
         showTabLayout2();//填充满与滚动的区别
         showTabLayout3();//indicator长短区别
         showTabLayout4();//设置tabIndicator 无区别
-        showTabLayout5();//写死drawable长度，则indicator长短可控
+        showTabLayout5();//写死drawable长度，则indicator长短可控,距上的距离也可控。左右边距也同理,可设置gravity
+        showTabLayout6();//fullwidth只是，背景框长度变长而已
     }
 
     private void showTabLayout() {
@@ -175,6 +176,9 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
     }
     private void showTabLayout5() {
         setTabData(binding.tablayout5);
+    }
+    private void showTabLayout6() {
+        setTabData(binding.tablayout6);
     }
 
     private void setTabData(TabLayout tablayout){

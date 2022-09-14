@@ -1,7 +1,6 @@
 package com.example.wuzhiming.myapplication.dialog;
 
 import android.app.Activity;
-import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -9,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.wuzhiming.myapplication.R;
+import com.example.wuzhiming.myapplication.dialog.base.BaseDialog;
 
 
 /**
