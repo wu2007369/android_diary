@@ -1,5 +1,6 @@
 package com.example.wuzhiming.myapplication.dialog
 
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.wuzhiming.myapplication.R
@@ -15,6 +16,8 @@ import com.mango.bridge.dialog.BaseBottomSheetDialogBindingFragment
  * @Description:    类作用描述
  */
 class TestBottomDragDlg : BaseBottomSheetDialogBindingFragment<DialogBottomDragBinding>() {
+    override fun setPeekHeight()=DisplayUtil.dip2px(200f).toInt()
+
     override fun setLayoutId() = R.layout.dialog_bottom_drag
 
     override fun initView(root: View?) {
@@ -23,10 +26,17 @@ class TestBottomDragDlg : BaseBottomSheetDialogBindingFragment<DialogBottomDragB
         }
     }
 
-    override fun setParams() {
-        super.setParams()
-        val view: View? =
-            dialog?.window?.findViewById(com.google.android.material.R.id.design_bottom_sheet)
-        view?.let { BottomSheetBehavior.from(it).peekHeight = DisplayUtil.dip2px(200f).toInt() }
+    override fun onStart() {
+        super.onStart()
+        getBehavior()?.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback(){
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                Log.i("TestBottomDragDlg"," onStateChanged newState="+newState)
+
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+            }
+
+        })
     }
 }

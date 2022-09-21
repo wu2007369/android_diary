@@ -11,9 +11,11 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.wuzhiming.myapplication.animator.AnimatorACT;
 import com.example.wuzhiming.myapplication.base.BaseActivity;
 import com.example.wuzhiming.myapplication.coordinatorlayout.HeaderAnimatorActivity;
 import com.example.wuzhiming.myapplication.customCamera.Main11Activity;
+import com.example.wuzhiming.myapplication.databinding.ActivityMainBinding;
 import com.example.wuzhiming.myapplication.immerse.ImmerseActivity;
 import com.example.wuzhiming.myapplication.intent.IntentActivity;
 import com.example.wuzhiming.myapplication.itext.PdfAboutActivity;
@@ -28,10 +30,15 @@ import com.example.wuzhiming.myapplication.uieffect.UiEffectActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
+    private ActivityMainBinding mDataBind;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+         mDataBind= ActivityMainBinding.inflate(getLayoutInflater());
+        mDataBind.setLifecycleOwner(this);
+        setContentView(mDataBind.getRoot());//必须set，否则无效
+//        setContentView(R.layout.activity_main);
 
         Button btn1 = findViewById(R.id.btn);
         btn1.setOnClickListener(this);
@@ -61,6 +68,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn23).setOnClickListener(this);
         findViewById(R.id.btn24).setOnClickListener(this);
         findViewById(R.id.btn25).setOnClickListener(this);
+
+        mDataBind.btnEventTest.setOnClickListener(this);
+        mDataBind.btnAnimator.setOnClickListener(this);
     }
 
     @Override
@@ -128,6 +138,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn25:
                 startActivity(new Intent(this, WebViewAboutAct.class));
                 break;
+            case R.id.btnEventTest:
+                startActivity(new Intent(this, EventTestAct.class));
+                break;
+            case R.id.btnAnimator:
+                startActivity(new Intent(this, AnimatorACT.class));
+                break;
             default:
                 break;
         }
@@ -150,4 +166,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             return true;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        mDataBind.unbind();
+        super.onDestroy();
+    }
+
 }

@@ -31,6 +31,8 @@
         <activity
             android:exported="false" android:name=".CustomeWidegetActivity" />
         <activity
+            android:exported="false" android:name=".animator.AnimatorACT" />
+        <activity
             android:exported="false" android:name=".itext.PdfAboutActivity2" />
         <activity
             android:exported="false" android:name=".itext.PdfAboutActivity" />
@@ -156,6 +158,10 @@
         <activity
             android:exported="false"
             android:name=".WebViewAboutAct"
+            />
+        <activity
+            android:exported="false"
+            android:name=".EventTestAct"
             />
 
         <activity

@@ -13,5 +13,8 @@
     <color name="color_1D81FF">#1D81FF</color>
     <color name="color_D8D8D8">#D8D8D8</color>
     <color name="color_87888C">#87888C</color>
+    <color name="color_3480FF_10_percent">#193480FF</color>
+    <color name="color_8100FF_40_percent">#668100FF</color>
+    <color name="color_7651FF">#7651FF</color>
 
 </resources>

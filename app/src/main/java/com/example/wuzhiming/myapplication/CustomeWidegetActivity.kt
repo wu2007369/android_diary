@@ -1,6 +1,8 @@
 package com.example.wuzhiming.myapplication
 
+import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -13,6 +15,7 @@ import java.util.*
 class CustomeWidegetActivity : AppCompatActivity() {
     private lateinit var mDataBind: ActivityCustomeWidegetBinding
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mDataBind = DataBindingUtil.setContentView(this, R.layout.activity_custome_wideget)
@@ -68,6 +71,8 @@ class CustomeWidegetActivity : AppCompatActivity() {
             mDataBind.longImg.invalidate()
 
         }
+
+        mDataBind.radarView.circleColor=ContextCompat.getColor(this,R.color.color_7651FF)
     }
 
     override fun onDestroy() {

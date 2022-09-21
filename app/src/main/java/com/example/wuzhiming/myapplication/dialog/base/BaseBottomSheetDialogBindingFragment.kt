@@ -12,6 +12,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
 import com.example.wuzhiming.myapplication.R
 import com.example.wuzhiming.myapplication.utils.DisplayUtil
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 /**
@@ -28,6 +29,7 @@ abstract class BaseBottomSheetDialogBindingFragment<T : ViewDataBinding> : Botto
 
     abstract fun setLayoutId(): Int
     abstract fun initView(root: View?)
+    abstract fun setPeekHeight(): Int
 
     open fun setDialogStyle(): Int = R.style.dlg_ActionSheetDialogStyle
 
@@ -83,5 +85,10 @@ abstract class BaseBottomSheetDialogBindingFragment<T : ViewDataBinding> : Botto
         attributes?.gravity = Gravity.BOTTOM
         attributes?.width = DisplayUtil.getScreenWidth(context)
         window?.attributes = attributes
+        getBehavior()?.peekHeight = setPeekHeight()
     }
+
+    fun getBehavior(): BottomSheetBehavior<View>? =
+        dialog?.window?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            ?.let { BottomSheetBehavior.from(it) }
 }

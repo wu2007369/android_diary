@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/bottom_bg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/black"
+            />
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginTop="150dp"
+            android:layout_height="200dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <View
+                    android:id="@+id/top_listen_item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/color_FF6633"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/color_1D81FF"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/top_coordinator"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="100dp"
+            android:background="@color/white"
+
+            />
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/top_coordinator2"
+            android:layout_width="100dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="150dp"
+            android:layout_height="300dp">
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="snap"
+                    android:background="@color/colorAccent"
+                    app:layout_scrollFlags="scroll|snap"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="悬浮置顶布局"
+                    android:background="@color/white"
+                    />
+            </com.google.android.material.appbar.AppBarLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/img_recy"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator3"
+            android:layout_width="100dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="150dp"
+            android:layout_height="300dp"
+            >
+
+            <View
+                android:id="@+id/touch_outside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:importantForAccessibility="no"
+                android:soundEffectsEnabled="false"
+                android:background="@color/color_87888C"
+                />
+
+            <FrameLayout
+                android:id="@+id/design_bottom_sheet"
+                style="?attr/bottomSheetStyle"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal|top"
+                app:layout_behavior="@string/bottom_sheet_behavior"
+                android:background="@color/black"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>
