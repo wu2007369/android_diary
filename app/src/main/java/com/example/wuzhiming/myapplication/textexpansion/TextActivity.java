@@ -2,6 +2,7 @@ package com.example.wuzhiming.myapplication.textexpansion;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
@@ -43,6 +44,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.wuzhiming.myapplication.R;
+import com.example.wuzhiming.myapplication.extention.ViewExtentionKt;
 import com.example.wuzhiming.myapplication.utils.DpPxExchange;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -223,6 +225,10 @@ public class TextActivity extends AppCompatActivity {
         ShapeableImageView shapeableImage = findViewById(R.id.shapeableImageview5);
         shapeableImage.setStrokeColorResource(R.color.black);
         shapeableImage.setStrokeWidth(3);
+
+
+        AppCompatImageView img2 = findViewById(R.id.img2);
+        ViewExtentionKt.tint(img2,true,R.color.black,R.color.color_7651FF);
     }
 
     private void setHeader() {

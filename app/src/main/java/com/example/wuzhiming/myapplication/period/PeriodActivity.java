@@ -30,6 +30,7 @@ public class PeriodActivity extends BaseActivity implements View.OnClickListener
 
         findViewById(R.id.btn4)
         .setOnClickListener(this);
+
     }
 
     @Override
@@ -52,6 +53,8 @@ public class PeriodActivity extends BaseActivity implements View.OnClickListener
             case R.id.btn4:
                 startActivity(new Intent(this, Main5Activity.class));
                 overridePendingTransition(R.anim.pop_bottom_in_normal, R.anim.pop_bottom_out_normal);
+                break;
+            case R.id.btn5:
                 break;
         }
     }

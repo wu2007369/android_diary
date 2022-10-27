@@ -413,6 +413,33 @@
                 android:text="测试自定义选择栏"
                 app:layout_constraintTop_toBottomOf="@id/shapeableImageview5"
                 />
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/icon_center_gradient"
+                app:layout_constraintTop_toBottomOf="@id/editCustomeChoosePop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/icon_center_gradient"
+                app:layout_constraintTop_toBottomOf="@id/editCustomeChoosePop"
+                app:layout_constraintLeft_toRightOf="@id/img1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/img2"
+                app:layout_constraintBottom_toBottomOf="@id/img2"
+                android:text="失败，tint不会保留 gradient，渐变部分效果"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

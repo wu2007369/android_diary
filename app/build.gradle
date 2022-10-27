@@ -36,7 +36,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     packagingOptions {
+        //ITEXT
         pickFirst 'com/itextpdf/io/font/*'
         pickFirst 'com/itextpdf/io/font/cmap/*'
     }

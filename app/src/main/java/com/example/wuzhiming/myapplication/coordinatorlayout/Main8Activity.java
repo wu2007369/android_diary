@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -59,6 +60,10 @@ public class Main8Activity extends AppCompatActivity {
                 break;
             case 2:
                 setContentView(R.layout.activity_main8_2);
+                AppBarLayout appBar = findViewById(R.id.appbarLayout);
+                appBar.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, verticalOffset) -> {
+                    Log.i("AppBarLayout","verticalOffset="+verticalOffset);
+                });
                 break;
             case 3:
                 setContentView(R.layout.activity_main8_3);
