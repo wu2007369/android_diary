@@ -51,7 +51,7 @@
             android:startYear="2021"
             app:layout_constraintTop_toBottomOf="@id/wheelView" />
 
-        <com.example.wuzhiming.myapplication.wideget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
 
 
-        <com.example.wuzhiming.myapplication.wideget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -84,9 +84,9 @@
             <!--        app:tabIndicator="@drawable/base_icon_tab_select_straight"-->
             <!--        app:tabIndicator="@drawable/layer_tab_indicator"-->
 
-        </com.example.wuzhiming.myapplication.wideget.TabLayout>
+        </com.google.android.material.tabs.TabLayout>
 
-        <com.example.wuzhiming.myapplication.wideget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
 
-        <com.example.wuzhiming.myapplication.wideget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
 
-        <com.example.wuzhiming.myapplication.wideget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
 
-        <com.example.wuzhiming.myapplication.wideget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -146,14 +146,59 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tablayout6"
+            app:layout_constraintWidth_percent="0.8"
+            app:tabIndicator="@drawable/layer_tab_indicator_fixed_width"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorGravity="bottom"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tablayout7"
+            app:layout_constraintWidth_percent="0.8"
+            app:tabIndicator="@drawable/layer_tab_indicator"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorGravity="bottom"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/TabLayoutTextUnSelected"/>
+        <!--        app:tabBackground="@android:color/transparent"-->
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tablayout8"
+            app:layout_constraintWidth_percent="0.8"
+            app:tabIndicator="@drawable/layer_tab_indicator"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/TabLayoutTextUnSelected" />
         <LinearLayout
             android:id="@+id/img_bg"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="horizontal"
             app:layout_constraintDimensionRatio="5:1"
-            app:layout_constraintTop_toBottomOf="@id/tablayout6">
+            app:layout_constraintTop_toBottomOf="@id/tablayout9">
 
             <ImageView
                 android:layout_width="0dp"

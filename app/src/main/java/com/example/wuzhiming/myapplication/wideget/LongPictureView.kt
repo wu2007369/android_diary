@@ -56,6 +56,8 @@ class LongPictureView(context: Context, attrs: AttributeSet?) :
 //        imageUrls.add("/storage/emulated/0/Android/data/com.example.wuzhiming.myapplication/files/t_pic/IMG_20211223_145315.jpg")
 //        imageUrls.add("/storage/emulated/0/Android/data/com.example.wuzhiming.myapplication/files/t_pic/A.jpg")
 //        imageUrls.add("/storage/emulated/0/Android/data/com.example.wuzhiming.myapplication/files/t_pic/IMG_20211118_210235.jpg")
+
+
         imageUrls.add("/storage/emulated/0/缓存/files/IMG_20211223_145315.jpg")
         imageUrls.add("/storage/emulated/0/缓存/files/A.jpg")
         imageUrls.add("/storage/emulated/0/缓存/files/IMG_20211118_210235.jpg")

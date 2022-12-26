@@ -18,8 +18,8 @@ import android.widget.Toast;
 import com.example.wuzhiming.myapplication.databinding.ActivityWidegetAboutBinding;
 import com.example.wuzhiming.myapplication.interfa.OnWheelChangedListener;
 import com.example.wuzhiming.myapplication.interfa.WheelAdapter;
-import com.example.wuzhiming.myapplication.wideget.TabLayout;
 import com.example.wuzhiming.myapplication.wideget.WheelView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.Calendar;
 
@@ -28,7 +28,7 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
     private String TAG = "WidegetAboutActivity";
     private ActivityWidegetAboutBinding binding;
 
-    private WheelAdapter adapter=new WheelAdapter() {
+    private WheelAdapter adapter = new WheelAdapter() {
         @Override
         public int getItemsCount() {
             return 24;
@@ -36,7 +36,7 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
         @Override
         public String getItem(int var1) {
-            return var1+"";
+            return var1 + "";
         }
 
         @Override
@@ -49,7 +49,7 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding=ActivityWidegetAboutBinding.inflate(getLayoutInflater());
+        binding = ActivityWidegetAboutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
@@ -61,20 +61,21 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
                 binding.showCount.setText("seconds remaining: " + millisUntilFinished / 1000);
 
             }
+
             public void onFinish() {
                 binding.showCount.setText("done!");
             }
         }.start();
 
-        binding.datePickBtn.setOnClickListener(v->{
+        binding.datePickBtn.setOnClickListener(v -> {
             //获取日历的一个实例，里面包含了当前的时分秒
             Calendar calendar = Calendar.getInstance();
             //构建一个日期对话框，该对话框已经集成了日期选择器
             //DatePickerDialog的第二个构造参数指定了日期监听器
-            DatePickerDialog dialog = new DatePickerDialog(this,this
-                    ,calendar.get(Calendar.YEAR)//年份
-                    ,calendar.get(Calendar.MONTH)//月份
-                    ,calendar.get(Calendar.DAY_OF_MONTH))//日子
+            DatePickerDialog dialog = new DatePickerDialog(this, this
+                    , calendar.get(Calendar.YEAR)//年份
+                    , calendar.get(Calendar.MONTH)//月份
+                    , calendar.get(Calendar.DAY_OF_MONTH))//日子
                     ;
 //            dialog.getDatePicker().
             hideDaySpiner(dialog.getDatePicker());
@@ -91,10 +92,13 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
         showTabLayout();
         showTabLayout2();//填充满与滚动的区别
-        showTabLayout3();//indicator长短区别
-        showTabLayout4();//设置tabIndicator 无区别
-        showTabLayout5();//写死drawable长度，则indicator长短可控,距上的距离也可控。左右边距也同理,可设置gravity
-        showTabLayout6();//fullwidth只是，背景框长度变长而已
+        showTabLayout3();//是否填充满 的indicator长短区别
+        showTabLayout4();//设置tabIndicator 为直接的drawble，其余无区别，但是颜色被着色，高度有变化
+        showTabLayout5();//设置fullwidth为false；写死drawable长度，则indicator长短可控,距上的距离也可控。左右边距也同理,可设置gravity。但是颜色被着色
+        showTabLayout6();//在5的基础上，设置fullwidth为true。居然会着色取消
+        showTabLayout7();//6的基础上，改为滚动
+        showTabLayout8();//2的基础上，改为滚动
+        showTabLayout9();//3的基础上，改为滚动
     }
 
     private void showTabLayout() {
@@ -106,14 +110,14 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
                 "健康", "动漫", "互联网"};
 
         //TabLayout的基本使用
-        binding.tablayout.noTint=true;
+//        binding.tablayout.noTint=true;
 
 
         binding.tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 TextView textView = new TextView(WidegetAboutActivity.this);
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,17);
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
                 textView.setTextColor(getResources().getColor(R.color.color_FF6633));
                 textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
                 textView.setText(tab.getText());
@@ -141,7 +145,7 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
             }
         });
 
-        for(int i=0;i<8;i++){
+        for (int i = 0; i < 8; i++) {
             TabLayout.Tab tab = binding.tablayout.newTab();
             tab.setTag(i);
             tab.setText(mTitles[i]);
@@ -174,19 +178,33 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
     private void showTabLayout4() {
         setTabData(binding.tablayout4);
     }
+
     private void showTabLayout5() {
         setTabData(binding.tablayout5);
     }
+
     private void showTabLayout6() {
         setTabData(binding.tablayout6);
     }
 
-    private void setTabData(TabLayout tablayout){
+    private void showTabLayout7() {
+        setTabData(binding.tablayout7);
+    }
+
+    private void showTabLayout8() {
+        setTabData(binding.tablayout8);
+    }
+
+    private void showTabLayout9() {
+        setTabData(binding.tablayout9);
+    }
+
+    private void setTabData(TabLayout tablayout) {
         String mTitles[] = {
                 "上海", "头条推荐"};
         //TabLayout的基本使用
-        tablayout.noTint=true;
-        for(int i=0;i<2;i++){
+//        tablayout.noTint=true;
+        for (int i = 0; i < 2; i++) {
             TabLayout.Tab tab = tablayout.newTab();
             tab.setTag(i);
             tab.setText(mTitles[i]);
@@ -196,11 +214,11 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
     private void hideDaySpiner(DatePicker datePicker) {
         //        binding.datePicker.findViewById(com.android.internal.R.id.day).setVisibility(View.GONE);
-        View ll=datePicker.getChildAt(0);
-        if (ll instanceof LinearLayout){
-            View spiners=((LinearLayout) ll).getChildAt(0);
-            if (spiners instanceof LinearLayout){
-                if (((LinearLayout) spiners).getChildCount()==3){
+        View ll = datePicker.getChildAt(0);
+        if (ll instanceof LinearLayout) {
+            View spiners = ((LinearLayout) ll).getChildAt(0);
+            if (spiners instanceof LinearLayout) {
+                if (((LinearLayout) spiners).getChildCount() == 3) {
                     ((LinearLayout) spiners).getChildAt(2).setVisibility(View.GONE);
                 }
             }
@@ -209,8 +227,8 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String desc = String.format("您选择的日期是：%s年%s月%s日",year,month+1,dayOfMonth);
-        Toast.makeText(this,desc, Toast.LENGTH_SHORT).show();
+        String desc = String.format("您选择的日期是：%s年%s月%s日", year, month + 1, dayOfMonth);
+        Toast.makeText(this, desc, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -221,11 +239,11 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
         binding.wheelView.setLabel("");
         binding.wheelView.setCurrentItem(0);
         binding.wheelView.TEXT_SIZE = 60;
-        binding.wheelView.setSelectColor(ContextCompat.getColor(this,R.color.color_FF6633));
+        binding.wheelView.setSelectColor(ContextCompat.getColor(this, R.color.color_FF6633));
         binding.wheelView.addChangingListener(new OnWheelChangedListener() {
             @Override
             public void onChanged(WheelView var1, int var2, int var3) {
-                Log.e("onChanged","old="+var2+";new="+var3+";currentItem="+var1.getCurrentItem());
+                Log.e("onChanged", "old=" + var2 + ";new=" + var3 + ";currentItem=" + var1.getCurrentItem());
             }
         });
     }

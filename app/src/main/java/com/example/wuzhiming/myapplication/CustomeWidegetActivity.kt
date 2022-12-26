@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.wuzhiming.myapplication.databinding.ActivityCustomeWidegetBinding
 import com.example.wuzhiming.myapplication.utils.BitmapUtilKt
 import com.example.wuzhiming.myapplication.utils.ScreenUtils
+import com.example.wuzhiming.myapplication.wideget.CircularRingData
 import java.util.*
 
 
@@ -37,8 +38,10 @@ class CustomeWidegetActivity : AppCompatActivity() {
 
 
 
-        //open or close
-        mDataBind.longImg.test()
+        //TODO open or close
+        //TODO test ,longImg 在没有照片的手机上，得注释，防止崩溃
+//        mDataBind.longImg.test()
+
         mDataBind.changeColor.setOnClickListener {
             mDataBind.longImg.mPaint.color = ContextCompat.getColor(this, R.color.color_FF6633)
             mDataBind.longImg.paintTextSize = ScreenUtils.dp2px(this, 25f).toFloat()
@@ -73,6 +76,12 @@ class CustomeWidegetActivity : AppCompatActivity() {
         }
 
         mDataBind.radarView.circleColor=ContextCompat.getColor(this,R.color.color_7651FF)
+
+        mDataBind.circularRing.destValueArray= arrayListOf(CircularRingData(0.1F,getColor(R.color.color_7651FF),getColor(R.color.color_8100FF_40_percent)),
+            CircularRingData(0.3F,getColor(R.color.color_3480FF_10_percent),getColor(R.color.color_87888C)),
+            CircularRingData(0.3F,getColor(R.color.colorPrimaryDark),getColor(R.color.color_1D81FF)),
+            CircularRingData(0.3F,getColor(R.color.colorAccent),getColor(R.color.color_FF6633)))
+
     }
 
     override fun onDestroy() {
