@@ -77,6 +77,13 @@ public class Main8Activity extends AppCompatActivity {
             case 6:
                 setContentView(R.layout.activity_main8_6);
                 break;
+            case 7:
+                setContentView(R.layout.activity_main8_2_2);
+                AppBarLayout appBar2 = findViewById(R.id.appbarLayout);
+                appBar2.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, verticalOffset) -> {
+                    Log.i("AppBarLayout","verticalOffset="+verticalOffset);
+                });
+                break;
         }
 
         ActionBar actionBar = getSupportActionBar();

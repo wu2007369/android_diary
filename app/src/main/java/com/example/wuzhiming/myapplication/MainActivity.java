@@ -68,6 +68,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn23).setOnClickListener(this);
         findViewById(R.id.btn24).setOnClickListener(this);
         findViewById(R.id.btn25).setOnClickListener(this);
+        findViewById(R.id.btn26).setOnClickListener(this);
 
         mDataBind.btnEventTest.setOnClickListener(this);
         mDataBind.btnAnimator.setOnClickListener(this);
@@ -137,6 +138,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn25:
                 startActivity(new Intent(this, WebViewAboutAct.class));
+                break;
+            case R.id.btn26:
+                startActivity(new Intent(this,CustomeWidegetV2Activity.class));
                 break;
             case R.id.btnEventTest:
                 startActivity(new Intent(this, EventTestAct.class));

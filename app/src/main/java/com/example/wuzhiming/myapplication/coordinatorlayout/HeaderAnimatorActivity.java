@@ -29,6 +29,7 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
         findViewById(R.id.btn13).setOnClickListener(this);
         findViewById(R.id.btn14).setOnClickListener(this);
         findViewById(R.id.btn15).setOnClickListener(this);
+        findViewById(R.id.btn16).setOnClickListener(this);
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
@@ -54,6 +55,7 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
                 intent2.putExtra(Main8Activity.LAYOUT_TYPE,2);
                 startActivity(intent2);
                 break;
+
             case R.id.btn12:
                 Intent intent3 = new Intent(this, Main8Activity.class);
                 intent3.putExtra(Main8Activity.LAYOUT_TYPE,3);
@@ -73,6 +75,12 @@ public class HeaderAnimatorActivity extends AppCompatActivity implements View.On
                 Intent intent6 = new Intent(this, Main8Activity.class);
                 intent6.putExtra(Main8Activity.LAYOUT_TYPE,6);
                 startActivity(intent6);
+                break;
+
+            case R.id.btn16:
+                Intent intent7 = new Intent(this, Main8Activity.class);
+                intent7.putExtra(Main8Activity.LAYOUT_TYPE,7);
+                startActivity(intent7);
                 break;
             case R.id.btn1:
                 startActivity(new Intent(this, TitleGradientAnimateActivity.class));

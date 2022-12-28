@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".coordinatorlayout.Main8Activity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/color_FF6633"
+                android:text="snap"
+                app:layout_scrollFlags="scroll|snap" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/color_8100FF_40_percent"
+                android:text="snap"
+                app:layout_scrollFlags="scroll|snap" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/colorAccent"
+                android:text="悬浮置顶布局" />
+
+            <!--            <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="跟着滚动的布局"
+                            android:background="@color/colorAccent"
+                            app:layout_scrollFlags="scroll"
+                            />-->
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <!--        都行-->
+        <!--        <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/img_recy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    />-->
+
+        <!--        都行-->
+        <!--        <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/img_recy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    />-->
+
+        <!--        我曹 这也行-->
+        <!--<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/img_recy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>-->
+
+        <!--        无滑动组件，也行，就是不能摸-->
+        <!--        <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="800dp"
+                    android:background="@color/black"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        &lt;!&ndash;            内部没有滑动组件时，触摸滑动此部分内容，是不会拖动的，也没有联动&ndash;&gt;
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/img_recy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        />
+                </FrameLayout>-->
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1300dp"
+                />
+        </androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/img_recy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

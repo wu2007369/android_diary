@@ -253,6 +253,17 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 />
+
+
+            <com.example.wuzhiming.myapplication.wideget.DoublePhotoPreview
+                android:id="@+id/doubleImage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintDimensionRatio="5:3"
+                app:layout_constraintTop_toBottomOf="@id/circularRing"
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

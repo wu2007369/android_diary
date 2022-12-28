@@ -34,6 +34,8 @@
         <activity
             android:exported="false" android:name=".CustomeWidegetActivity" />
         <activity
+            android:exported="false" android:name=".CustomeWidegetV2Activity" />
+        <activity
             android:exported="false" android:name=".animator.AnimatorACT" />
         <activity
             android:exported="false" android:name=".itext.PdfAboutActivity2" />
