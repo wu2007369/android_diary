@@ -1,6 +1,7 @@
 package com.example.wuzhiming.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.wuzhiming.myapplication.databinding.ActivityCustomeWidegetV2Binding
@@ -18,5 +19,8 @@ class CustomeWidegetV2Activity: AppCompatActivity()  {
         mDataBind = DataBindingUtil.setContentView(this, R.layout.activity_custome_wideget_v2)
         mDataBind.lifecycleOwner = this
 
+        mDataBind.clickPressTest.isPressCallBack={
+            Log.i("clickPressTest",it.toString())
+        }
     }
 }

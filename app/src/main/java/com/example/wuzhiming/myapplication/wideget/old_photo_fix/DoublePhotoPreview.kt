@@ -1,4 +1,4 @@
-package com.example.wuzhiming.myapplication.wideget
+package com.example.wuzhiming.myapplication.wideget.old_photo_fix
 
 import android.content.Context
 import android.graphics.*

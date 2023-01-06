@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import com.example.wuzhiming.myapplication.R
+import com.example.wuzhiming.myapplication.utils.DisplayUtil
 
 /**
  * @Author:         wuzm
@@ -31,3 +32,17 @@ fun AppCompatImageView?.tint(
         )
     }
 }
+
+
+
+val Int.dp: Float
+    get() = DisplayUtil.dip2px(this.toFloat())
+
+val Float.dp: Float
+    get() = DisplayUtil.dip2px(this)
+
+val Int.sp:Float
+    get() = DisplayUtil.sp2px(this.toFloat())
+
+val Float.sp:Float
+    get() = DisplayUtil.sp2px(this.toFloat())

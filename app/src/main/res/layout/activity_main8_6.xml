@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="悬浮置顶布局"
+            android:text="悬浮置于顶层的布局"
             android:background="@color/colorAccent"
             android:layout_alignParentBottom="true"
             app:layout_behavior="@string/bottom_sheet_behavior"

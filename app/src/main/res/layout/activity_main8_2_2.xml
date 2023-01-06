@@ -26,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@color/color_8100FF_40_percent"
-                android:text="snap"
+                android:text="snap2\n 虽然也是两段式滑动，但是触摸和点击事件，会被behavior拦截，无法透传到下层"
+                android:textColor="@color/white"
                 app:layout_scrollFlags="scroll|snap" />
 
             <TextView
