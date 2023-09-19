@@ -146,7 +146,9 @@
         <activity
             android:exported="false"
             android:name=".Main5Activity"
-            android:theme="@style/dialogActivityTheme" />
+            android:theme="@style/sheetDialogActivityTheme" />
+<!--        次奥，真几把顺滑，sheetDialogActivityTheme 方向对了-->
+<!--        android:theme="@style/dialogActivityTheme" />-->
         <activity
             android:exported="false" android:name=".immerse.Main4Activity" />
         <activity
@@ -161,7 +163,7 @@
             android:name=".TranslucentActivity"
             android:theme="@android:style/Theme.Translucent" />
 
-        //是可以的，只是还差个顶部
+<!--        //是可以的，只是还差个顶部-->
 <!--        android:theme="@android:style/Theme.Translucent" />-->
 
         <activity

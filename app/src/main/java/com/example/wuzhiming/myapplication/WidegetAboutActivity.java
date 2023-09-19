@@ -1,6 +1,8 @@
 package com.example.wuzhiming.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 
 import android.app.DatePickerDialog;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,6 +102,10 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
         showTabLayout7();//6的基础上，改为滚动
         showTabLayout8();//2的基础上，改为滚动
         showTabLayout9();//3的基础上，改为滚动
+        //如果要和viewpager fragment 联动，还可以使用官方支持的TabLayoutMediator
+
+        showTabLayout10();//直接全部使用customeView，可以实现完全的自定义效果，唯一缺点是没有indicatior的滑动效果
+
     }
 
     private void showTabLayout() {
@@ -197,6 +204,49 @@ public class WidegetAboutActivity extends AppCompatActivity implements DatePicke
 
     private void showTabLayout9() {
         setTabData(binding.tablayout9);
+    }
+
+    private void showTabLayout10() {
+        setTabData(binding.tablayout10);
+        TabLayout.Tab tab1 = binding.tablayout10.getTabAt(0).setCustomView(R.layout.base_view_custom_tab_item);
+        TabLayout.Tab tab2=binding.tablayout10.getTabAt(1).setCustomView(R.layout.base_view_custom_tab_item);
+        AppCompatTextView   text = tab1.getCustomView().findViewById(R.id.tv_text);
+                text.setText("casdcascsacas");
+        AppCompatTextView   text2 = tab2.getCustomView().findViewById(R.id.tv_text);
+        text2.setText("casdcascsacaxasxasxasxs");
+        binding.tablayout10.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                setTabTextState(tab.getCustomView().findViewById(R.id.tv_text),
+                        tab.getCustomView().findViewById((R.id.iv_indicator)),
+                        Typeface.BOLD);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                setTabTextState(tab.getCustomView().findViewById(R.id.tv_text),
+                        tab.getCustomView().findViewById((R.id.iv_indicator)),
+                        Typeface.NORMAL);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        binding.tablayout10.selectTab(tab2);
+    }
+    private void setTabTextState(TextView textInner,
+                                 ImageView indicatorInner,
+                                 Integer tf) {
+        textInner.setTypeface(Typeface.defaultFromStyle(tf));
+        if (tf == Typeface.NORMAL) {
+            textInner.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15f);
+            indicatorInner.setVisibility(View.INVISIBLE);
+        } else {
+            textInner.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f);
+            indicatorInner.setVisibility(View.VISIBLE);
+        }
     }
 
     private void setTabData(TabLayout tablayout) {

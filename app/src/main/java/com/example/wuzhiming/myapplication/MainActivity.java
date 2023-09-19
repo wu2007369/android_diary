@@ -56,6 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn11).setOnClickListener(this);
         findViewById(R.id.btn12).setOnClickListener(this);
         findViewById(R.id.btn13).setOnClickListener(this);
+        findViewById(R.id.btn_recy).setOnClickListener(this);
         findViewById(R.id.btn14).setOnClickListener(this);
         findViewById(R.id.btn15).setOnClickListener(this);
         findViewById(R.id.btn16).setOnClickListener(this);
@@ -98,6 +99,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(new Intent(this, Main11Activity.class));
                 break;
             case R.id.btn13:
+                startActivity(new Intent(this, Main13Activity.class));
+                break;
+            case R.id.btn_recy:
                 startActivity(new Intent(this, Main13Activity.class));
                 break;
             case R.id.btn14:
